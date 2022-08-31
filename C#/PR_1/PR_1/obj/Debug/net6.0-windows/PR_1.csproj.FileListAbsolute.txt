@@ -1,0 +1,17 @@
+C:\My_projects\college\C#\PR_1\PR_1\bin\Debug\net6.0-windows\PR_1.exe
+C:\My_projects\college\C#\PR_1\PR_1\bin\Debug\net6.0-windows\PR_1.deps.json
+C:\My_projects\college\C#\PR_1\PR_1\bin\Debug\net6.0-windows\PR_1.runtimeconfig.json
+C:\My_projects\college\C#\PR_1\PR_1\bin\Debug\net6.0-windows\PR_1.dll
+C:\My_projects\college\C#\PR_1\PR_1\bin\Debug\net6.0-windows\PR_1.pdb
+C:\My_projects\college\C#\PR_1\PR_1\obj\Debug\net6.0-windows\PR_1.csproj.AssemblyReference.cache
+C:\My_projects\college\C#\PR_1\PR_1\obj\Debug\net6.0-windows\PR_1.Form1.resources
+C:\My_projects\college\C#\PR_1\PR_1\obj\Debug\net6.0-windows\PR_1.csproj.GenerateResource.cache
+C:\My_projects\college\C#\PR_1\PR_1\obj\Debug\net6.0-windows\PR_1.GeneratedMSBuildEditorConfig.editorconfig
+C:\My_projects\college\C#\PR_1\PR_1\obj\Debug\net6.0-windows\PR_1.AssemblyInfoInputs.cache
+C:\My_projects\college\C#\PR_1\PR_1\obj\Debug\net6.0-windows\PR_1.AssemblyInfo.cs
+C:\My_projects\college\C#\PR_1\PR_1\obj\Debug\net6.0-windows\PR_1.csproj.CoreCompileInputs.cache
+C:\My_projects\college\C#\PR_1\PR_1\obj\Debug\net6.0-windows\PR_1.dll
+C:\My_projects\college\C#\PR_1\PR_1\obj\Debug\net6.0-windows\refint\PR_1.dll
+C:\My_projects\college\C#\PR_1\PR_1\obj\Debug\net6.0-windows\PR_1.pdb
+C:\My_projects\college\C#\PR_1\PR_1\obj\Debug\net6.0-windows\PR_1.genruntimeconfig.cache
+C:\My_projects\college\C#\PR_1\PR_1\obj\Debug\net6.0-windows\ref\PR_1.dll
