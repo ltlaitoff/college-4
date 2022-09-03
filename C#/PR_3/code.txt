@@ -1,0 +1,261 @@
+Form 1
+namespace PR_3
+{
+	public partial class Form1 : Form
+	{
+		private Form2 form2 = new Form2();
+		private Form3 form3 = new Form3();
+		private Form4 form4 = new Form4();
+		private Form5 form5 = new Form5();
+
+		public Form1()
+		{
+			InitializeComponent();
+		}
+
+		private void button1_Click(object sender, EventArgs e)
+		{
+			form2.Show();
+		}
+
+		private void button2_Click(object sender, EventArgs e)
+		{
+			form3.Show();
+		}
+
+		private void button3_Click(object sender, EventArgs e)
+		{
+			form4.Show();
+		}
+
+		private void button4_Click(object sender, EventArgs e)
+		{
+			form5.Show();
+		}
+	}
+}
+
+Form 2
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace PR_3
+{
+	public partial class Form2 : Form
+	{
+		private const double b = 0.00845;
+		private const double x = 0.85431;
+		private const double a = 2.31;
+
+		private const string RESULT_Y = "Result Y = {0}";
+		private const string RESULT_D = "Result d = {0}";
+
+		public Form2()
+		{
+			InitializeComponent();
+		}
+
+		private void setResultY(double value)
+		{
+			label1.Text = String.Format(RESULT_Y, value);
+		}
+
+		private void setResultD(double value)
+		{
+			label7.Text = String.Format(RESULT_D, value);
+		}
+
+		private double calculateY(double t)
+		{
+			return b * Math.Pow(t, 2) * x - a / Math.Pow(Math.Sin(x / a), 2);
+		}
+
+		private double calculateD(double c)
+		{
+			return a * Math.Pow(c, -Math.Sqrt(a)) * Math.Cos(b * x);
+		}
+
+		private void button1_Click(object sender, EventArgs e)
+		{
+			double t = decimal.ToDouble(numericUpDown1.Value);
+			double c = decimal.ToDouble(numericUpDown2.Value);
+
+			setResultY(calculateY(t));
+			setResultD(calculateD(c));
+		}
+
+		private void label1_Click(object sender, EventArgs e)
+		{
+
+		}
+	}
+}
+
+
+Form 3
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace PR_3
+{
+	public partial class Form3 : Form
+	{
+		private const double PRICE_BEFORE_EQUAL_100 = 0.24;
+		private const double PRICE_AFTER_100 = 0.22;
+		private const string RESULT_STRING = "Result(coef = {0}) = {1}";
+		public Form3()
+		{
+			InitializeComponent();
+		}
+
+		private void setResult(double coef, double result)
+		{
+			label1.Text = String.Format(RESULT_STRING, coef, result);
+		}
+
+		private void button1_Click(object sender, EventArgs e)
+		{
+			double value = decimal.ToDouble(numericUpDown1.Value);
+
+			if (value > 100)
+			{
+				setResult(PRICE_AFTER_100, PRICE_AFTER_100 * value);
+				return;
+			}
+
+			setResult(PRICE_BEFORE_EQUAL_100, PRICE_BEFORE_EQUAL_100 * value);
+		}
+	}
+}
+
+
+Form 4
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace PR_3
+{
+	public partial class Form4 : Form
+	{
+		private const string RESULT_STRING = "Result: {0}";
+		public Form4()
+		{
+			InitializeComponent();
+		}
+
+		private void setResult(double value)
+		{
+			label1.Text = String.Format(RESULT_STRING, value);
+		}
+
+		private void button1_Click(object sender, EventArgs e)
+		{
+			double result = 1;
+			double x = decimal.ToDouble(numericUpDown1.Value);
+
+			for (int i = 1; i < 24; i++)
+			{
+				result *= 1 - x / (i + 1);
+			}
+
+			setResult(result);
+		}
+	}
+}
+
+
+Form 5
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace PR_3
+{
+	public partial class Form5 : Form
+	{
+		private class KeyValue<KeyT, ValueT>
+		{
+			public KeyT Key { get; set; }
+			public ValueT Value { get; set; }
+
+			public KeyValue() { }
+
+			public KeyValue(KeyT key, ValueT value)
+			{
+				this.Key = key;
+				this.Value = value;
+			}
+		}
+
+		KeyValue<string, int>[] countries = new KeyValue<string, int>[] {
+			new KeyValue<string, int>("Kiev", 1),
+			new KeyValue<string, int>("Charkov", 2),
+			new KeyValue<string, int>("Zaporizhzhia", 3),
+			new KeyValue<string, int>("Dnipro", 4),
+			new KeyValue<string, int>("Odesa", 5),
+			new KeyValue<string, int>("Donetsk", 6),
+			new KeyValue<string, int>("Vinnytsia", 7),
+			new KeyValue<string, int>("Poltava", 8),
+			new KeyValue<string, int>("Lutsk", 9)
+		};
+
+		public Form5()
+		{
+			InitializeComponent();
+			setRows(countries);
+		}
+
+		private void setRows(KeyValue<string, int>[] value)
+		{
+			dataGridView1.Rows.Clear();
+
+			foreach (KeyValue<string, int> v in value)
+			{
+				dataGridView1.Rows.Add(v.Key, v.Value);
+			}
+		}
+
+		private void button1_Click(object sender, EventArgs e)
+		{
+			double value = decimal.ToDouble(numericUpDown1.Value);
+
+			for (int i = 0; i < countries.Length; i++)
+			{
+				if (countries[i].Value < value)
+				{
+					countries[i].Value *= 2;
+				}
+
+			}
+
+			setRows(countries);
+		}
+	}
+}
