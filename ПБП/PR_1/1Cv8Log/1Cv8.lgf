@@ -15,4 +15,10 @@ d349729d-d11c-4034-a222-d74885a5b2fc
 {4,"_$Session$_.Finish",5},
 {3,"Designer",2},
 {4,"_$InfoBase$_.ConfigUpdate",6},
-{4,"_$InfoBase$_.DBConfigUpdate",7}
+{4,"_$InfoBase$_.DBConfigUpdate",7},
+{4,"_$Data$_.New",8},
+{5,156be8fe-8251-4d46-af9f-e5d5b9934f35,"Справочник.Клиенты",1},
+{5,df4b4e06-17b0-4c9d-b3de-9d837c7be264,"Справочник.Сотрудники",2},
+{5,369c3de8-4107-4276-a542-569a8154da3f,"Справочник.Номенклатура",3},
+{4,"_$Data$_.Update",9},
+{5,61fffbf4-fac8-46a8-9ee7-86dd964be6c0,"Справочник.Склады",4}
