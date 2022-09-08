@@ -4,13 +4,13 @@ namespace PR_1
 	{
 		private const string NOT_NUMBER = "-";
 		private const int MIN_COUNTER_VALUE = 0;
-		private const int MAX_COUNTER_VALUE = 9;
+		private const int MAX_COUNTER_VALUE = 10;
 		private const int NUMBER_VOID = -1;
 		private const string STRING_NUMBER = "{0} число";
 
 		private int counter = MIN_COUNTER_VALUE;
 
-		private int[] numbers = new int[MAX_COUNTER_VALUE] { 9, 8, 7, 6, 5, 4, 3, 2, 1 };
+		private int[] numbers = new int[MAX_COUNTER_VALUE] { 10, 9, 8, 7, 6, 5, 4, 3, 2, 1 };
 
 		public Form1()
 		{
