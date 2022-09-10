@@ -4,7 +4,7 @@ const sync = require('browser-sync').create()
 const embedSvg = require('gulp-embed-svg')
 
 function generateCSS(callback) {
-	src('./src/scss/style.scss')
+	src('./src/style/style.scss')
 		.pipe(sass().on('error', sass.logError))
 		.pipe(dest('build/style'))
 
@@ -36,7 +36,7 @@ function browserSync(callback) {
 		}
 	})
 
-	watch('./src/scss/**/*.scss', generateCSS)
+	watch('./src/style/**/*.scss', generateCSS)
 	watch('./src/index.html', generateHTML)
 
 	watch('./build/**.html').on('change', sync.reload)
