@@ -1,4 +1,4 @@
-const {src, dest, watch, parallel} = require('gulp')
+const { src, dest, watch, parallel } = require('gulp')
 const sass = require('gulp-sass')(require('sass'))
 const sync = require('browser-sync').create()
 const embedSvg = require('gulp-embed-svg')
@@ -12,11 +12,10 @@ function generateCSS(callback) {
 }
 
 function generateHTML(callback) {
-	console.log('generateHTML')
 	src('./src/index.html')
 		.pipe(
 			embedSvg({
-				root: './src/assets/images/favicons/',
+				root: './src/assets/images/favicons/'
 			})
 		)
 		.pipe(dest('build'))
@@ -24,11 +23,17 @@ function generateHTML(callback) {
 	callback()
 }
 
+function moveFonts(callback) {
+	src('./src/fonts/**').pipe(dest('build/fonts'))
+
+	callback()
+}
+
 function browserSync(callback) {
 	sync.init({
 		server: {
-			baseDir: './build',
-		},
+			baseDir: './build'
+		}
 	})
 
 	watch('./src/scss/**/*.scss', generateCSS)
@@ -38,4 +43,4 @@ function browserSync(callback) {
 	watch('./build/**/*.css').on('change', sync.reload)
 }
 
-exports.default = browserSync
+exports.default = parallel(browserSync, moveFonts)
