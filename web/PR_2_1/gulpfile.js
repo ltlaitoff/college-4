@@ -24,7 +24,7 @@ function generateHTML(callback) {
 }
 
 function moveFonts(callback) {
-	src('./src/fonts/**').pipe(dest('build/fonts'))
+	src('./src/assets/fonts/**').pipe(dest('build/fonts'))
 
 	callback()
 }
