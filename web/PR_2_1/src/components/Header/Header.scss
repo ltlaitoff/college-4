@@ -1,0 +1,72 @@
+@use '../../style/ui/mixins.scss';
+
+.header {
+	--color-header-buttons-dark-border: var(--color-gray-5);
+	--color-header-buttons-white: var(--color-gray-1);
+	--color-header-buttons-dark: var(--color-gray-8);
+
+	--color-header-signin-button-main: var(--color-blue-6);
+	--color-header-signin-button-hover: var(--color-gray-7);
+
+	--color-header-cart-button-hover: var(--color-gray-6);
+
+	padding: 44px 0 40px 0;
+
+	display: flex;
+	justify-content: space-between;
+
+	&--buttons {
+		height: 40px;
+
+		display: flex;
+		column-gap: 10px;
+	}
+
+	&--button {
+		padding: 8px 16px;
+
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		column-gap: 6px;
+
+		border: none;
+		border-radius: 2px;
+
+		transition: box-shadow 0.2s;
+
+		cursor: pointer;
+
+		&-signin {
+			background: var(--color-header-signin-button-main);
+
+			color: var(--color-header-buttons-white);
+
+			&-icon {
+				fill: var(--color-header-buttons-white);
+			}
+
+			&:hover {
+				@include mixins.effect-style-elevation-1(
+					var(--color-header-signin-button-hover)
+				);
+			}
+		}
+
+		&-shopping-cart {
+			background: var(--color-header-buttons-white);
+			border: 1px solid var(--color-header-buttons-dark-border);
+			color: var(--color-header-buttons-dark);
+
+			&-icon {
+				fill: var(--color-header-buttons-dark);
+			}
+
+			&:hover {
+				@include mixins.effect-style-elevation-1(
+					var(--color-header-cart-button-hover)
+				);
+			}
+		}
+	}
+}
