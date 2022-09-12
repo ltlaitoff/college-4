@@ -1,0 +1,19 @@
+@use './ui';
+// @use './imports';
+
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+:root {
+	--max-width: 1200px;
+	--body-bg: var(--color-gray-1);
+}
+
+.body {
+	background-color: var(--body-bg);
+}

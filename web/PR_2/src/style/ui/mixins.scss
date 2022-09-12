@@ -1,0 +1,297 @@
+@use './variables.scss';
+
+@mixin text-style-roboto-regular-15-px-20-px {
+	font-size: 15px;
+	font-family: 'Roboto';
+	font-weight: 400;
+	font-style: normal;
+	line-height: 20px;
+	text-decoration: none;
+	text-transform: none;
+}
+
+@mixin text-style-roboto-regular-18-px-21-px {
+	font-family: 'Roboto';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 18px;
+	line-height: 21px;
+	text-decoration: none;
+	text-transform: none;
+}
+
+@mixin text-style-regular-12-px-20-px {
+	font-size: 12px;
+	font-family: 'SF Pro Display';
+	font-weight: 400;
+	font-style: normal;
+	line-height: 20px;
+	text-decoration: none;
+	text-transform: none;
+}
+
+@mixin text-style-regular-14-px-22-px {
+	font-size: 14px;
+	font-family: 'SF Pro Display';
+	font-weight: 400;
+	font-style: normal;
+	line-height: 22px;
+	text-decoration: none;
+	text-transform: none;
+}
+
+@mixin text-style-regular-16-px-24-px {
+	font-size: 16px;
+	font-family: 'SF Pro Display';
+	font-weight: 400;
+	font-style: normal;
+	line-height: 24px;
+	text-decoration: none;
+	text-transform: none;
+}
+
+@mixin text-style-regular-20-px-28-px {
+	font-size: 20px;
+	font-family: 'SF Pro Display';
+	font-weight: 400;
+	font-style: normal;
+	line-height: 28px;
+	text-decoration: none;
+	text-transform: none;
+}
+
+@mixin text-style-regular-24-px-32-px {
+	font-size: 24px;
+	font-family: 'SF Pro Display';
+	font-weight: 400;
+	font-style: normal;
+	line-height: 32px;
+	text-decoration: none;
+	text-transform: none;
+}
+
+@mixin text-style-regular-30-px-38-px {
+	font-size: 30px;
+	font-family: 'SF Pro Display';
+	font-weight: 400;
+	font-style: normal;
+	line-height: 38px;
+	text-decoration: none;
+	text-transform: none;
+}
+
+@mixin text-style-regular-38-px-46-px {
+	font-size: 38px;
+	font-family: 'SF Pro Display';
+	font-weight: 400;
+	font-style: normal;
+	line-height: 46px;
+	text-decoration: none;
+	text-transform: none;
+}
+
+@mixin text-style-regular-46-px-54-px {
+	font-size: 46px;
+	font-family: 'SF Pro Display';
+	font-weight: 400;
+	font-style: normal;
+	line-height: 54px;
+	text-decoration: none;
+	text-transform: none;
+}
+
+@mixin text-style-regular-56-px-64-px {
+	font-size: 56px;
+	font-family: 'SF Pro Display';
+	font-weight: 400;
+	font-style: normal;
+	line-height: 64px;
+	text-decoration: none;
+	text-transform: none;
+}
+
+@mixin text-style-semibold-12-px-20-px {
+	font-size: 12px;
+	font-family: 'SF Pro Display';
+	line-height: 20px;
+	text-decoration: none;
+	text-transform: none;
+}
+
+@mixin text-style-semibold-14-px-22-px {
+	font-size: 14px;
+	font-family: 'SF Pro Display';
+	line-height: 22px;
+	text-decoration: none;
+	text-transform: none;
+}
+
+@mixin text-style-semibold-16-px-24-px {
+	font-size: 16px;
+	font-family: 'SF Pro Display';
+	line-height: 24px;
+	text-decoration: none;
+	text-transform: none;
+}
+
+@mixin text-style-semibold-20-px-28-px {
+	font-size: 20px;
+	font-family: 'SF Pro Display';
+	line-height: 28px;
+	text-decoration: none;
+	text-transform: none;
+}
+
+@mixin text-style-semibold-24-px-32-px {
+	font-size: 24px;
+	font-family: 'SF Pro Display';
+	line-height: 32px;
+	text-decoration: none;
+	text-transform: none;
+}
+
+@mixin text-style-semibold-30-px-38-px {
+	font-size: 30px;
+	font-family: 'SF Pro Display';
+	line-height: 38px;
+	text-decoration: none;
+	text-transform: none;
+}
+
+@mixin text-style-semibold-38-px-46-px {
+	font-size: 38px;
+	font-family: 'SF Pro Display';
+	line-height: 46px;
+	text-decoration: none;
+	text-transform: none;
+}
+
+@mixin text-style-semibold-46-px-54-px {
+	font-size: 46px;
+	font-family: 'SF Pro Display';
+	line-height: 54px;
+	text-decoration: none;
+	text-transform: none;
+}
+
+@mixin text-style-semibold-56-px-64-px {
+	font-size: 56px;
+	font-family: 'SF Pro Display';
+	line-height: 64px;
+	text-decoration: none;
+	text-transform: none;
+}
+
+@mixin effect-style-input-focus {
+	box-shadow: 0px 0px 4px var(--color-blue-6);
+}
+
+@mixin effect-style-input-focus-error {
+	box-shadow: 0px 0px 4px var(--color-red-6);
+}
+
+@mixin effect-style-input-focus-warning {
+	box-shadow: 0px 0px 4px var(--color-gold-6);
+}
+
+@mixin effect-style-elevation-1($color) {
+	box-shadow: 0px 2px 8px $color;
+}
+
+@mixin effect-style-elevation-2($color) {
+	box-shadow: 0px 4px 12px $color;
+}
+
+@mixin effect-style-stroke-left-top-bottom {
+	box-shadow: inset 1px 0px 0px var(--color-gray-5),
+		inset 0px 1px 0px var(--color-gray-5),
+		inset 0px -1px 0px var(--color-gray-5);
+}
+
+@mixin effect-style-stroke-left-top-bottom {
+	box-shadow: inset 1px 0px 0px var(--color-gray-5),
+		inset 0px 1px 0px var(--color-gray-5),
+		inset 0px -1px 0px var(--color-gray-5);
+}
+
+@mixin effect-style-stroke-left-top-bottom {
+	box-shadow: inset 1px 0px 0px var(--color-gray-5),
+		inset 0px 1px 0px var(--color-gray-5),
+		inset 0px -1px 0px var(--color-gray-5);
+}
+
+@mixin effect-style-stroke-left-right-bottom {
+	box-shadow: inset -1px 0px 0px var(--color-gray-5),
+		inset 1px 0px 0px var(--color-gray-5),
+		inset 0px -1px 0px var(--color-shadow-string);
+}
+
+@mixin effect-style-stroke-left-right-bottom {
+	box-shadow: inset -1px 0px 0px var(--color-gray-5),
+		inset 1px 0px 0px var(--color-gray-5),
+		inset 0px -1px 0px var(--color-shadow-string);
+}
+
+@mixin effect-style-stroke-left-right-bottom {
+	box-shadow: inset -1px 0px 0px var(--color-gray-5),
+		inset 1px 0px 0px var(--color-gray-5),
+		inset 0px -1px 0px var(--color-shadow-string);
+}
+
+@mixin effect-style-stroke-left-top-right {
+	box-shadow: inset -1px 0px 0px var(--color-gray-5),
+		inset 1px 0px 0px var(--color-gray-5),
+		inset 0px 1px 0px var(--color-shadow-string);
+}
+
+@mixin effect-style-stroke-left-top-right {
+	box-shadow: inset -1px 0px 0px var(--color-gray-5),
+		inset 1px 0px 0px var(--color-gray-5),
+		inset 0px 1px 0px var(--color-shadow-string);
+}
+
+@mixin effect-style-stroke-left-top-right {
+	box-shadow: inset -1px 0px 0px var(--color-gray-5),
+		inset 1px 0px 0px var(--color-gray-5),
+		inset 0px 1px 0px var(--color-shadow-string);
+}
+
+@mixin effect-style-stroke-top-right-bottom {
+	box-shadow: inset -1px 0px 0px var(--color-gray-5),
+		inset 0px 1px 0px var(--color-gray-5),
+		inset 0px -1px 0px var(--color-gray-5);
+}
+
+@mixin effect-style-stroke-top-right-bottom {
+	box-shadow: inset -1px 0px 0px var(--color-gray-5),
+		inset 0px 1px 0px var(--color-gray-5),
+		inset 0px -1px 0px var(--color-gray-5);
+}
+
+@mixin effect-style-stroke-top-right-bottom {
+	box-shadow: inset -1px 0px 0px var(--color-gray-5),
+		inset 0px 1px 0px var(--color-gray-5),
+		inset 0px -1px 0px var(--color-gray-5);
+}
+
+@mixin effect-style-stroke-top-bottom {
+	box-shadow: inset 0px 1px 0px var(--color-gray-5),
+		inset 0px -1px 0px var(--color-gray-5);
+}
+
+@mixin effect-style-stroke-top-bottom {
+	box-shadow: inset 0px 1px 0px var(--color-gray-5),
+		inset 0px -1px 0px var(--color-gray-5);
+}
+
+@mixin effect-style-stroke-top {
+	box-shadow: inset 0px 1px 0px var(--color-gray-5);
+}
+
+@mixin effect-style-stroke-bottom {
+	box-shadow: inset 0px -1px 0px var(--color-gray-5);
+}
+
+@mixin effect-style-tab-border-active {
+	box-shadow: inset 0px -2px 0px var(--color-blue-6);
+}

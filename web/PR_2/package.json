@@ -1,0 +1,23 @@
+{
+	"name": "pr_2_1",
+	"version": "1.0.0",
+	"description": "pr_2_1",
+	"private": true,
+	"scripts": {
+		"build": "webpack",
+		"start": "webpack serve --open",
+		"test": "test"
+	},
+	"author": "ltlaitoff",
+	"license": "ISC",
+	"devDependencies": {
+		"browser-sync": "^2.27.10",
+		"css-loader": "^6.7.1",
+		"sass": "^1.54.9",
+		"sass-loader": "^13.0.2",
+		"style-loader": "^3.3.1",
+		"webpack": "^5.74.0",
+		"webpack-cli": "^4.10.0",
+		"webpack-dev-server": "^4.11.0"
+	}
+}
