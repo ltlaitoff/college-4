@@ -1,0 +1,5 @@
+﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(534,5): warning MSB8028: The intermediate directory (x64\Debug\) contains files shared from another project (PR_1_server.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+  PR_2_server.cpp
+C:\My_projects\college\KCA\PR_2\PR_1\PR_1_server\PR_2_server.cpp(44,8): warning C4101: 'buf': unreferenced local variable
+C:\My_projects\college\KCA\PR_2\PR_1\PR_1_server\PR_2_server.cpp(44,18): warning C4101: 'res': unreferenced local variable
+  PR_1_server.vcxproj -> C:\My_projects\college\KCA\PR_2\PR_1\x64\Debug\PR_2_server.exe
