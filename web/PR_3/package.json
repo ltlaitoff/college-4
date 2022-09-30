@@ -1,0 +1,15 @@
+{
+	"name": "pr_3",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"test": "NODE_OPTIONS=--experimental-vm-modules jest"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"jest": "^29.0.3"
+	}
+}
