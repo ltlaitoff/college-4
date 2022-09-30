@@ -1,0 +1,16 @@
+.restaurant {
+	&-header {
+		display: flex;
+		column-gap: 30px;
+	}
+
+	&-title {
+		font-family: 'Roboto';
+		font-style: normal;
+		font-weight: 700;
+		font-size: 36px;
+		line-height: 42px;
+
+		color: #000000;
+	}
+}

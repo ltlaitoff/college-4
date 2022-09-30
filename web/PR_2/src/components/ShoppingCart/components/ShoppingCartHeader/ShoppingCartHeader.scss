@@ -1,0 +1,27 @@
+.shopping-cart--header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	&-title {
+		font-family: 'Roboto';
+		font-style: normal;
+		font-weight: 700;
+		font-size: 36px;
+		line-height: 42px;
+
+		color: #000000;
+	}
+
+	&-cross-button {
+		background: transparent;
+		border: none;
+	}
+
+	&-cross {
+		width: 25px;
+		height: 25px;
+		fill: black;
+		cursor: pointer;
+	}
+}

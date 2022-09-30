@@ -1,0 +1,80 @@
+.shopping-cart--card {
+	display: flex;
+
+	justify-content: space-between;
+
+	&-wrapper {
+		display: flex;
+		column-gap: 48px;
+	}
+
+	&-title {
+		font-family: 'Roboto';
+		font-style: normal;
+		font-weight: 400;
+		font-size: 18px;
+		line-height: 32px;
+		/* identical to box height, or 178% */
+
+		color: #000000;
+	}
+
+	&-price {
+		font-family: 'Roboto';
+		font-style: normal;
+		font-weight: 700;
+		font-size: 20px;
+		line-height: 32px;
+		/* identical to box height, or 160% */
+
+		color: #000000;
+	}
+
+	&-buttons {
+		display: flex;
+		column-gap: 15px;
+	}
+
+	&-count {
+		/* Regular / 16px | 24px */
+
+		font-family: 'SF Pro Display';
+		font-style: normal;
+		font-weight: 400;
+		font-size: 16px;
+		line-height: 24px;
+		/* identical to box height, or 150% */
+
+		display: flex;
+		align-items: center;
+		text-align: center;
+	}
+
+	&-button {
+		/* Gray / gray-1 */
+
+		background: #ffffff;
+		/* Daybreak Blue / blue-5 */
+
+		border: 1px solid #40a9ff;
+		border-radius: 2px;
+
+		padding: 5px 16px;
+		/* Regular / 14px | 22px */
+
+		font-family: 'SF Pro Display';
+		font-style: normal;
+		font-weight: 400;
+		font-size: 14px;
+		line-height: 22px;
+		/* identical to box height, or 157% */
+
+		display: flex;
+		align-items: center;
+		text-align: center;
+
+		/* Daybreak Blue / blue-5 */
+
+		color: #40a9ff;
+	}
+}

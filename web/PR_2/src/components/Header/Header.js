@@ -1,26 +1,26 @@
-import SingInIcon from '../../assets/images/favicons/user.svg'
-import ShoppingCartIcon from '../../assets/images/favicons/shopping-cart.svg'
-import Logo from '../Logo'
-import Search from '../Search'
-import ButtonWithIconAndText from '../ButtonWithIconAndText'
+import Logo from 'components/Logo'
+import Search from './components/Search'
+import ButtonWithIconAndText from './components/ButtonWithIconAndText'
 
-import { createElement } from '../../helpers/createElement'
+import { createElement, openShoppingCart } from 'helpers'
 import './Header.scss'
 
 const Header = () => {
 	const signInButton = ButtonWithIconAndText({
 		buttonClass: 'header--button header--button-signin',
-		iconClass: 'header--button-icon header--button-signin-icon',
-		iconSrc: SingInIcon,
+		iconClasses: ['header--button-icon', 'header--button-signin-icon'],
+		icon: 'user',
 		text: 'Війти'
 	})
 
 	const shoppingCartButton = ButtonWithIconAndText({
 		buttonClass: 'header--button header--button-shopping-cart',
-		iconClass: 'header--button-icon header--button-shopping-cart-icon',
-		iconSrc: ShoppingCartIcon,
+		iconClasses: ['header--button-icon', 'header--button-shopping-cart-icon'],
+		icon: 'shopping-cart',
 		text: 'Корзина'
 	})
+
+	shoppingCartButton.addEventListener('click', () => openShoppingCart())
 
 	const buttonsWrapper = createElement('div', {
 		className: 'header--buttons',

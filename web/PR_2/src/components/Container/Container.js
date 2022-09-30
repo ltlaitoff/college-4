@@ -1,10 +1,10 @@
-import { createElement } from '../../helpers/createElement'
+import { createElement } from 'helpers'
 import './Container.scss'
 
-const Container = ({ childs }) => {
+const Container = child => {
 	const container = createElement('div', {
 		className: 'container',
-		childs: childs
+		child: child
 	})
 
 	return container
