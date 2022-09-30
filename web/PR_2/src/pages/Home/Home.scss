@@ -1,0 +1,8 @@
+@use 'style/ui/mixins.scss';
+
+.home-page {
+	@include mixins.container;
+
+	margin-top: 18px;
+	padding-bottom: 90px;
+}

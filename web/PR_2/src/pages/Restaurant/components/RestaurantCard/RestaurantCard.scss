@@ -1,0 +1,87 @@
+.restaurant-card {
+	width: 380px;
+
+	/* Gray/gray-1 */
+
+	background: #ffffff;
+	box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.05);
+	border-radius: 7px;
+
+	animation-delay: var(--animate-delay);
+
+	&-image {
+		width: 100%;
+		min-height: 212px;
+	}
+	&-body {
+		padding: 25px 24px 30px 24px;
+
+		&-title {
+			font-family: 'Roboto';
+			font-style: normal;
+			font-weight: 400;
+			font-size: 24px;
+			line-height: 32px;
+			/* identical to box height, or 133% */
+
+			color: #000000;
+		}
+		&-descr {
+			margin-top: 10px;
+			font-family: 'Roboto';
+			font-style: normal;
+			font-weight: 400;
+			font-size: 18px;
+			line-height: 21px;
+
+			/* Gray/gray-7 */
+
+			color: #8c8c8c;
+		}
+		&-wrapper {
+			margin-top: 25px;
+			display: flex;
+			column-gap: 32px;
+
+			&-button {
+				border: none;
+
+				padding: 8px 16px;
+				display: flex;
+				justify-content: space-between;
+
+				/* Daybreak Blue/blue-6 */
+
+				background: #1890ff;
+				border-radius: 2px;
+
+				/* Regular/16px | 24px */
+
+				font-family: 'SF Pro Display';
+				font-style: normal;
+				font-weight: 400;
+				font-size: 16px;
+				line-height: 24px;
+				/* identical to box height, or 150% */
+
+				display: flex;
+				align-items: center;
+				text-align: center;
+
+				/* Gray/gray-1 */
+
+				color: #ffffff;
+			}
+			&-price {
+				font-family: 'Roboto';
+				font-style: normal;
+				font-weight: 700;
+				font-size: 20px;
+				line-height: 32px;
+				/* identical to box height, or 160% */
+
+				color: #000000;
+			}
+		}
+	}
+}

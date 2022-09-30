@@ -1,0 +1,7 @@
+@use 'style/ui/mixins.scss';
+
+.restaurant {
+	@include mixins.container;
+
+	padding-bottom: 110px;
+}

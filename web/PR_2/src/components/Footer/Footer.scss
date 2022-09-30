@@ -1,13 +1,32 @@
-@use '../../style/ui/mixins.scss';
+@use 'style/ui/mixins.scss';
 
 .footer {
+	@include mixins.container;
+
+	padding: 60px 0;
+
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	column-gap: 30px;
+
+	@media screen and (max-width: 750px) {
+		justify-content: center;
+		flex-wrap: wrap;
+		row-gap: 20px;
+	}
 
 	&--wrapper {
 		display: flex;
 		align-items: center;
+
+		@media screen and (max-width: 600px) {
+			flex-wrap: wrap;
+			justify-content: center;
+			flex-wrap: wrap;
+			row-gap: 20px;
+		}
+
 		column-gap: 36px;
 	}
 
@@ -15,6 +34,15 @@
 		&-list {
 			list-style: none;
 			display: flex;
+			@media screen and (max-width: 600px) {
+				flex-wrap: wrap;
+
+				flex-wrap: wrap;
+				justify-content: center;
+				flex-wrap: wrap;
+				row-gap: 10px;
+			}
+
 			column-gap: 15px;
 		}
 

@@ -1,4 +1,4 @@
-@use '../../style/ui/mixins.scss';
+@use 'style/ui/mixins.scss';
 
 .header {
 	--color-header-buttons-dark-border: var(--color-gray-5);
@@ -10,10 +10,21 @@
 
 	--color-header-cart-button-hover: var(--color-gray-6);
 
-	padding: 44px 0 40px 0;
+	@include mixins.container;
+
+	padding: 44px 0 23px 0;
 
 	display: flex;
 	justify-content: space-between;
+	column-gap: 10px;
+
+	@media screen and (max-width: 850px) {
+		flex-wrap: wrap;
+		justify-content: center;
+		row-gap: 20px;
+		column-gap: 30px;
+		// align-items: center;
+	}
 
 	&--buttons {
 		height: 40px;
@@ -43,6 +54,7 @@
 			color: var(--color-header-buttons-white);
 
 			&-icon {
+				height: 13px;
 				fill: var(--color-header-buttons-white);
 			}
 
@@ -59,6 +71,7 @@
 			color: var(--color-header-buttons-dark);
 
 			&-icon {
+				height: 13px;
 				fill: var(--color-header-buttons-dark);
 			}
 

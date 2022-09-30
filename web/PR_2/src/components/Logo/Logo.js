@@ -1,13 +1,11 @@
-import LogoIcon from '../../assets/images/favicons/logo.svg'
-import { createElement } from '../../helpers/createElement'
+import LoadIcon from 'components/LoadIcon'
+import { createElement } from 'helpers'
 import './Logo.scss'
 
+import { route } from 'router'
+
 const Logo = () => {
-	const icon = createElement('img', {
-		className: 'logo--image',
-		src: LogoIcon,
-		alt: 'logo'
-	})
+	const icon = LoadIcon('logo', 'logo--image')
 
 	const title = createElement('h1', {
 		className: 'logo--text',
@@ -19,6 +17,8 @@ const Logo = () => {
 		href: '#',
 		childs: [icon, title]
 	})
+
+	logo.onClick = () => route('/')
 
 	return logo
 }

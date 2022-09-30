@@ -1,4 +1,4 @@
-import { createElement } from '../../../../helpers/createElement'
+import { createElement } from 'helpers'
 
 const FooterMenu = ({ menuInfo }) => {
 	const listItems = menuInfo.map(info => {

@@ -1,0 +1,15 @@
+.social {
+	--social-icon-size: 25px;
+
+	display: flex;
+	column-gap: 20px;
+
+	list-style-type: none;
+
+	&--item {
+		&-icon {
+			width: var(--social-icon-size);
+			height: var(--social-icon-size);
+		}
+	}
+}
