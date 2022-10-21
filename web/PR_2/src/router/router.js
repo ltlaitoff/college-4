@@ -1,9 +1,15 @@
+import { renderDOM, createComponent } from 'lib'
+
+import { getStore } from '../store'
+
 const HOME_PAGE = import(/* webpackChunkName: "homePage" */ 'pages/Home')
 const RESTAURANT_PAGE = import(
 	/* webpackChunkName: "restaurantPage" */ 'pages/Restaurant'
 )
 
 const ERROR_PAGE = import(/* webpackChunkName: "ErrorPage" */ 'pages/ErrorPage')
+import { createElement } from 'helpers'
+import { addWatcher } from '../store/store'
 
 let CACHE_ROOT = null
 
@@ -66,19 +72,36 @@ const route = (path, params = []) => {
 	window.location.hash = path + '&' + searchParams.toString()
 }
 
-function router(root) {
-	if (CACHE_ROOT !== root) {
-		CACHE_ROOT = root
-	}
+function router(props) {
+	// if (CACHE_ROOT !== root) {
+	// 	CACHE_ROOT = root
+	// }
 
 	const hash = '/' + window.location.hash.replace('#/', '')
 	const page = getRoutesTemplageByPath(hash)
+
+	// console.log('%crouter.js line:79 object', 'color: #007acc;', object);
 
 	const paramsStr = hash.split('&')[1]
 	const searchParams = new URLSearchParams(paramsStr)
 
 	page.then(data => {
-		root.replaceChildren(data.default(searchParams))
+		console.log(data.default.name)
+		if (data.default.name === 'Home') {
+			renderDOM(
+				'router-view',
+
+				createComponent(data.default, {
+					key: 'router-page',
+					...props,
+					...searchParams
+				})
+			)
+			return
+		}
+
+		const routerView = document.querySelector('.home-page')
+		routerView.replaceChildren(data.default(searchParams))
 	})
 }
 

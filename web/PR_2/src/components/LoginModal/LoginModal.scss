@@ -1,0 +1,114 @@
+@use 'style/ui/mixins.scss';
+
+.login-modal {
+	&-all {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100vw;
+		height: 100vh;
+
+		background-color: rgba(0, 0, 0, 0.3);
+
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	&-close {
+		padding: 10px;
+		position: absolute;
+		top: 0;
+		right: 0;
+		transform: translate(30%, -30%);
+		width: 35px;
+		height: 35px;
+		background-color: var(--color-gray-9);
+		fill: white;
+		border-radius: 50%;
+		border: none;
+
+		cursor: pointer;
+	}
+
+	&-body {
+		position: relative;
+		padding-bottom: 20px;
+		min-width: 300px;
+
+		background-color: white;
+		border-radius: 15px;
+
+		box-shadow: 0px 2px 30px var(--color-gray-7);
+	}
+
+	&-form {
+		padding: 50px;
+		display: flex;
+		flex-direction: column;
+		row-gap: 30px;
+		align-items: center;
+		justify-content: center;
+
+		font-family: Roboto;
+		font-weight: normal;
+
+		&-title {
+			font-size: 32px;
+		}
+
+		&-label {
+			font-size: 18px;
+
+			width: 100%;
+		}
+
+		&-input {
+			min-height: 33px;
+			margin-top: 10px;
+			padding: 6px 16px;
+
+			font-size: 14px;
+
+			border: 1px solid gray;
+			height: 100%;
+			width: 100%;
+			border-radius: 2px;
+
+			&-error {
+				border-color: var(--color-red-6);
+				outline-color: var(--color-red-6);
+			}
+		}
+
+		&-button {
+			display: inline-block;
+			padding: 12px 16px;
+
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			column-gap: 6px;
+
+			border: none;
+			border-radius: 2px;
+
+			transition: box-shadow 0.2s;
+
+			background: var(--color-blue-6);
+
+			color: var(--color-gray-1);
+
+			font-size: 16px;
+			line-height: 20px;
+
+			width: 100%;
+
+			cursor: pointer;
+
+			&:hover {
+				@include mixins.effect-style-elevation-1(var(--color-gray-7));
+			}
+		}
+	}
+}

@@ -1,7 +1,8 @@
 import {
 	ADD_CARD_TO_STORE,
 	REMOVE_CARD_FROM_STORE,
-	CHANGE_CARD_PRICE
+	CHANGE_CARD_PRICE,
+	SET_LOGGED_VALUE
 } from './actions'
 
 export default (store = {}, action) => {
@@ -30,6 +31,11 @@ export default (store = {}, action) => {
 			})
 
 			return { ...store, shoppingCart: shoppingCart }
+		}
+
+		case SET_LOGGED_VALUE: {
+			console.log('logged value set')
+			return { ...store, logged: action.payload }
 		}
 	}
 
