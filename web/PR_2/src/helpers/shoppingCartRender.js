@@ -1,18 +1,14 @@
 import ShoppingCart from 'components/ShoppingCart'
+import { createPortal } from 'helpers/portal'
 
 export const openShoppingCart = () => {
 	const cart = document.querySelector('#app>.shopping-cart')
 	if (cart) return
 
-	const app = document.querySelector('#app')
+	let onClose = () => {
+		close()
+	}
 
-	app.append(ShoppingCart())
-}
-
-export const removeShoppingCart = () => {
-	const cart = document.querySelector('#app>.shopping-cart')
-
-	if (!cart) return
-
-	cart.remove(ShoppingCart())
+	const element = ShoppingCart({ onClose: onClose })
+	const close = createPortal(element)
 }

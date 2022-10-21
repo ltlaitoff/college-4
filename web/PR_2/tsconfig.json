@@ -1,0 +1,31 @@
+{
+	"compilerOptions": {
+		"outDir": "./build/",
+		"noImplicitAny": true,
+		"module": "es2022",
+		"target": "es5",
+		"jsx": "react",
+		"allowJs": true,
+		"moduleResolution": "node",
+
+		"baseUrl": "./",
+		"paths": {
+			"assets": ["src/assets/"],
+			"style": ["src/style/"],
+			"components": ["src/components/"],
+			"helpers": ["src/helpers/"],
+			"favicons": ["src/assets/images/favicons"],
+			"pages": ["src/pages"],
+			"api": ["src/api/"],
+			"router": ["src/router/"],
+			"store": ["src/store/"],
+			"lib": ["packages/reactiveLibrary/"]
+		}
+	},
+	"ts-node": {
+		"compilerOptions": {
+			"module": "CommonJS"
+		}
+	}
+	// "files": ["globals.d.ts"]
+}

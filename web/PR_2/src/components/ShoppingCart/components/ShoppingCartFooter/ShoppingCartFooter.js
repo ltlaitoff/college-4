@@ -1,12 +1,12 @@
 import './ShoppingCartFooter.scss'
-import { createElement, removeShoppingCart } from 'helpers'
+import { createElement } from 'helpers'
 
-const ShoppingCartFooter = () => {
+const ShoppingCartFooter = ({ onClose }) => {
 	const closeButton = createElement('button', {
 		className: 'shopping-cart--footer-cancel',
 		textContent: 'Відміна'
 	})
-	closeButton.addEventListener('click', () => removeShoppingCart())
+	closeButton.addEventListener('click', () => onClose())
 
 	const footer = createElement('div', {
 		className: 'shopping-cart--footer',

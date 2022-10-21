@@ -7,12 +7,16 @@ import {
 
 import './ShoppingCart.scss'
 
-const ShoppingCart = () => {
+const ShoppingCart = ({ onClose }) => {
 	const shoppingCart = createElement('div', {
 		className: 'shopping-cart',
 		child: createElement('div', {
 			className: 'shopping-cart--body',
-			childs: [ShoppingCartHeader(), ShoppingCartCards(), ShoppingCartFooter()]
+			childs: [
+				ShoppingCartHeader({ onClose: onClose }),
+				ShoppingCartCards(),
+				ShoppingCartFooter({ onClose: onClose })
+			]
 		})
 	})
 

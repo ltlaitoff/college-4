@@ -1,8 +1,8 @@
-const path = require('path')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
+import * as path from 'path'
+import * as HtmlWebpackPlugin from 'html-webpack-plugin'
 
 module.exports = {
-	entry: './src/index.js',
+	entry: './src/index.ts',
 	output: {
 		filename: 'bundle.js',
 		path: path.resolve(__dirname, 'build'),
@@ -18,8 +18,10 @@ module.exports = {
 			pages: path.resolve(__dirname, 'src/pages'),
 			api: path.resolve(__dirname, 'src/api/'),
 			router: path.resolve(__dirname, 'src/router/'),
-			store: path.resolve(__dirname, 'src/store/')
-		}
+			store: path.resolve(__dirname, 'src/store/'),
+			lib: path.resolve(__dirname, 'packages/reactiveLibrary/')
+		},
+		extensions: ['.ts', '.js']
 	},
 
 	module: {
@@ -35,6 +37,11 @@ module.exports = {
 			{
 				test: /\.svg$/,
 				loader: 'svg-inline-loader'
+			},
+			{
+				test: /\.tsx?$/,
+				use: 'ts-loader',
+				exclude: /node_modules/
 			}
 		]
 	},
