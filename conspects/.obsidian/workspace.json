@@ -1,0 +1,195 @@
+{
+  "main": {
+    "id": "0cf2357440242147",
+    "type": "split",
+    "children": [
+      {
+        "id": "568934852f8ac6db",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "b80f771f4a6f43c1",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Групова динаміка/ПЗ 5.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "3bd232a7dace35a0",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.0.3"
+              }
+            }
+          },
+          {
+            "id": "9c3f167485b9f634",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Розробка застосувань кліент-серверної архітектури/Лекція 3.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "f80cb9391d6d8abd",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Групова динаміка/Тема 6.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "4e011a85b277c11d",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Групова динаміка/СР 3.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ],
+        "currentTab": 4
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "5fd9b2f733578b7b",
+    "type": "split",
+    "children": [
+      {
+        "id": "443fea0c31257255",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "e88857539e0f04bd",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "1536fa3f8801b785",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "0ff969c8e5d0f629",
+            "type": "leaf",
+            "state": {
+              "type": "starred",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "1cea2ce891900296",
+    "type": "split",
+    "children": [
+      {
+        "id": "af304975734efcac",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "c60b5b2242dc6268",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Групова динаміка/СР 3.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "38230e88ad35cda0",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Групова динаміка/СР 3.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "c08b11a8bd0d1cb5",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "0baa7f084e4c5fbc",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Групова динаміка/СР 3.md"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "active": "4e011a85b277c11d",
+  "lastOpenFiles": [
+    "Untitled.md",
+    "Групова динаміка/Тема 6.md",
+    "Групова динаміка/Тема 4.md",
+    "Групова динаміка/Тема 3.md",
+    "Розробка застосувань кліент-серверної архітектури/Лекція 3.md",
+    "Групова динаміка/ПЗ 4.md"
+  ]
+}
