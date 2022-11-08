@@ -1,0 +1,3 @@
+﻿  PR_3_server.cpp
+C:\My_projects\college\KCA\PR_3\PR_3\PR_1_server\PR_3_server.cpp(15,17): warning C4326: return type of 'main' should be 'int' instead of 'void'
+  PR_1_server.vcxproj -> C:\My_projects\college\KCA\PR_3\PR_3\x64\Debug\PR_3_server.exe

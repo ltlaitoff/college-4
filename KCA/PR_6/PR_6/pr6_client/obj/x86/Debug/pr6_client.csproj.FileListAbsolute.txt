@@ -1,0 +1,12 @@
+D:\College\rpz_18_1\кса\pr6\pr6_client\bin\Debug\pr6_client.exe
+D:\College\rpz_18_1\кса\pr6\pr6_client\bin\Debug\pr6_client.pdb
+D:\College\rpz_18_1\кса\pr6\pr6_client\obj\x86\Debug\pr6_client.exe
+D:\College\rpz_18_1\кса\pr6\pr6_client\obj\x86\Debug\pr6_client.pdb
+C:\My_projects\college\KCA\PR_6\pr6_client\bin\Debug\pr6_client.exe.config
+C:\My_projects\college\KCA\PR_6\pr6_client\bin\Debug\pr6_client.exe
+C:\My_projects\college\KCA\PR_6\pr6_client\bin\Debug\pr6_client.pdb
+C:\My_projects\college\KCA\PR_6\pr6_client\obj\x86\Debug\pr6_client.csproj.AssemblyReference.cache
+C:\My_projects\college\KCA\PR_6\pr6_client\obj\x86\Debug\pr6_client.csproj.SuggestedBindingRedirects.cache
+C:\My_projects\college\KCA\PR_6\pr6_client\obj\x86\Debug\pr6_client.csproj.CoreCompileInputs.cache
+C:\My_projects\college\KCA\PR_6\pr6_client\obj\x86\Debug\pr6_client.exe
+C:\My_projects\college\KCA\PR_6\pr6_client\obj\x86\Debug\pr6_client.pdb
