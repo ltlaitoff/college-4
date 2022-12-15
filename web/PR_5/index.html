@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="./libs/bootstrap.min.css" />
+    <link rel="stylesheet" href="./style/style.css" />
+    <title>Quiz</title>
+  </head>
+
+  <body>
+    <header>
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <div class="d-flex justify-content-between p-1 p-sm-2 p-md-3">
+              <div class="logo d-flex">
+                <div class="logo-img"></div>
+                <span class="logo-text h1">BURGER-QUIZ</span>
+              </div>
+              <h1 class="contacts d-none d-md-block">GLO Academy</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section class="main">
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <div class="d-flex justify-content-center p-1 p-sm-2 p-md-3">
+              <div class="content"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col">
+            <div class="d-flex flex-column align-items-center p-1 p-sm-2 p-md-3">
+              <h2 class="main-title text-center h1">Пройди тест та збери</h2>
+              <h2 class="main-title text-center h1">бургер своєї мрії</h2>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col">
+            <div class="d-flex justify-content-center p-1 p-sm-2 p-md-3">
+              <div class="arrow display-4">&dArr;</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col">
+            <div class="d-flex justify-content-center p-1 p-sm-2 p-md-3">
+              <button type="button" class="btn btn-outline-danger" id="btnOpenModal">
+                <span class="btnText h1">Пройди тест та отримай результат</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="modal" tabindex="-1" role="dialog" id="modalBlock">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Дай відповідь на питання:</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+              id="closeModal"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body d-flex flex-column align-items-center" id="modalBody">
+            <h5 class="question p-1 p-sm-2 p-md-3 text-center" id="question"></h5>
+            <div class="answers w-100 p-1 p-sm-2 p-md-3" id="answers">
+              <form
+                action="#"
+                id="formAnswers"
+                class="formAnswers d-flex flex-wrap justify-content-around"
+              ></form>
+            </div>
+          </div>
+
+          <div class="modal-footer" id="modalFooter">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal" id="prev">
+              Назад
+            </button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal" id="next">
+              Вперед
+            </button>
+            <button type="button" class="btn btn-primary sendBtn d-none" id="send">
+              Надіслати
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-app.js"></script>
+    <!-- <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-auth.js"></script> -->
+    <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-database.js"></script>
+    <script src="./script/main.js" type="module"></script>
+  </body>
+</html>

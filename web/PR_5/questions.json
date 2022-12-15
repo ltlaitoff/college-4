@@ -1,0 +1,80 @@
+{
+  "questions": [
+    {
+      "question": "Якого кольору бургер?",
+      "category": "color",
+      "answers": [
+        {
+          "title": "Стандарт",
+          "url": "./image/burger.png"
+        },
+        {
+          "title": "Чорний",
+          "url": "./image/burgerBlack.png"
+        }
+      ],
+      "type": "radio"
+    },
+    {
+      "question": "Із якого м'яса котлета?",
+      "category": "meat",
+      "answers": [
+        {
+          "title": "Курка",
+          "url": "./image/chickenMeat.png"
+        },
+        {
+          "title": "Яловичина",
+          "url": "./image/beefMeat.png"
+        },
+        {
+          "title": "Свинина",
+          "url": "./image/porkMeat.png"
+        }
+      ],
+      "type": "radio"
+    },
+    {
+      "question": "Додаткові інгредієнти?",
+      "category": "additional",
+      "answers": [
+        {
+          "title": "Помідор",
+          "url": "./image/tomato.png"
+        },
+        {
+          "title": "Огірок",
+          "url": "./image/cucumber.png"
+        },
+        {
+          "title": "Салат",
+          "url": "./image/salad.png"
+        },
+        {
+          "title": "Цибуля",
+          "url": "./image/onion.png"
+        }
+      ],
+      "type": "checkbox"
+    },
+    {
+      "question": "Додати соус?",
+      "category": "souse",
+      "answers": [
+        {
+          "title": "Часниковий",
+          "url": "./image/sauce1.png"
+        },
+        {
+          "title": "Томатний",
+          "url": "./image/sauce2.png"
+        },
+        {
+          "title": "Гірчичний",
+          "url": "./image/sauce3.png"
+        }
+      ],
+      "type": "radio"
+    }
+  ]
+}
