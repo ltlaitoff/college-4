@@ -21,7 +21,7 @@
 
   <div id="app">
     <form @submit.prevent="addStudent()">
-      <div class="msg" v-if="msg">{{msg}}</div>
+      <div class="msg" v-if="msg">{{ msg }}</div>
       <input type="text" v-model="newItem.name" placeholder="Name" required />
       <br>
 
@@ -42,7 +42,10 @@
         <th>Видалити</th>
       </tr>
       <tr v-for="student in students" :key="student.name">
-        <td> <input v-model="student.name"></td>
+        <td>
+          <input v-model="student.name">
+        </td>
+
         <td>
           <select v-model="student.group_id" v-if="groups">
             <option value="">None</option>
@@ -50,10 +53,10 @@
           </select>
         </td>
         <td>
-          <button type="submit" @click.prevent="updateStudent(s);">Update</button>
+          <button type="submit" @click.prevent="updateStudent(student)">Update</button>
         </td>
         <td>
-          <button type="submit" @click.prevent="deleteStudent(s);">Delete</button>
+          <button type="submit" @click.prevent="deleteStudent(student)">Delete</button>
         </td>
       </tr>
     </table>

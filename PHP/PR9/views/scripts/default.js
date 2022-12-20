@@ -44,8 +44,8 @@ new Vue({
 		toFormData(object) {
 			const formData = new FormData()
 
-			object.forEach((element, index) => {
-				formData.append(index, element)
+			Object.entries(object).forEach(([key, value]) => {
+				formData.append(key, value)
 			})
 
 			return formData
@@ -56,7 +56,9 @@ new Vue({
 
 			const formData = this.toFormData(this.newItem)
 
-			addUserToAPI(formData).then(() => {
+			addUserToAPI(formData).then(response => {
+				console.log(response)
+
 				this.getData()
 				this.newItem = []
 				this.msg = 'Студент був успішно доданий'
