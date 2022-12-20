@@ -20,11 +20,6 @@ export const getSubjects = () => {
 }
 
 export const addSubject = (formData) => {
-  console.log(
-    [...formData.entries()] // expand the elements from the .entries() iterator into an actual array
-      .map((e) => encodeURIComponent(e[0]) + '=' + encodeURIComponent(e[1]))
-  )
-
   return axios.post(`${BASE_URL}/index.php/subjects/addSubject`, formData)
 }
 
@@ -34,4 +29,21 @@ export const updateSubject = (formData) => {
 
 export const deleteSubject = (formData) => {
   return axios.post(`${BASE_URL}/index.php/subjects/actions`, formData)
+}
+
+/* Uspishnist */
+export const getUspishnist = () => {
+  return axios.get(`${BASE_URL}/index.php/uspishnist/getUspishnist`)
+}
+
+export const addUspishnist = (formData) => {
+  return axios.post(`${BASE_URL}/index.php/uspishnist/addUspishnist`, formData)
+}
+
+export const updateUspishnist = (formData) => {
+  return axios.post(`${BASE_URL}/index.php/uspishnist/actions`, formData)
+}
+
+export const deleteUspishnist = (formData) => {
+  return axios.post(`${BASE_URL}/index.php/uspishnist/actions`, formData)
 }

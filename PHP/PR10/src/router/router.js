@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import SubjectsView from '../views/SubjectsView.vue'
+import UspishnistView from '../views/UspishnistView.vue'
 
 const routes = [
   {
@@ -11,10 +12,7 @@ const routes = [
   {
     path: '/uspishnist',
     name: 'uspishnist',
-    // route level code-splitting
-    // this generates a separate chunk (About.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    // component: () => import('../views/AboutView.vue')
+    component: UspishnistView,
   },
   {
     path: '/subjects',
