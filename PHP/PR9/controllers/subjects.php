@@ -19,18 +19,27 @@ class SubjectsController
 		include 'views/subjects.php';
 	}
 
+	public function getSubjects()
+	{
+		$data['subjects'] = $this->model->getSubjectsFromDB();
+
+		die(json_encode($data));
+	}
+
 	public function addSubject()
 	{
 		if ($_POST['name']) {
 			$this->model->addSubjectToDB();
+			die(json_encode($_POST));
 		}
-		$this->redirect("/index.php/subjects");
+
+		die(json_encode(true));
 	}
 
 	public function actions()
 	{
 		if ($_POST['delete']) $this->model->deleteSubjectFromDB();
 		if ($_POST['update']) $this->model->updateSubject();
-		$this->redirect("/index.php/subjects");
+		die(json_encode(true));
 	}
 }
