@@ -1,0 +1,98 @@
+body {
+  background: #e0ffff;
+  font-family: fantasy, sans-serif;
+}
+
+li {
+  list-style-type: none;
+}
+
+.answers-item label {
+  cursor: pointer;
+  border: 2px solid #000;
+  border-radius: 0 0 10px 10px;
+  min-width: 60px;
+  text-align: center;
+}
+
+.answers-item label:hover {
+  border: 2px solid rgba(0, 0, 0, 0.5);
+}
+
+input:checked + label {
+  border: 2px solid #3cb371;
+  color: #3cb371;
+}
+
+label span {
+  font-size: 14px;
+}
+
+.answerImg {
+  width: 100%;
+}
+
+.answers-item {
+  width: 80px;
+}
+
+.logo-img {
+  width: 50px;
+  height: 50px;
+  background: url('../image/burger.png') center no-repeat;
+  background-size: contain;
+}
+
+.logo-text,
+.contacts,
+.main-title,
+.arrow {
+  color: #3cb371;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: black;
+}
+
+.content {
+  width: 300px;
+  height: 300px;
+  background: url('../image/burger-4026165_960_720.webp') center no-repeat;
+  background-size: 115%;
+}
+
+.modal {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  background: #e0ffff;
+}
+
+.btn-outline-danger {
+  background-color: inherit;
+  border: 1px solid #3cb371 !important;
+  color: #3cb371 !important;
+}
+
+.btn-outline-danger span {
+  font-size: 2rem !important;
+  color: #3cb371;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: black;
+}
+
+.btn-outline-danger:hover,
+.btn-outline-danger:active,
+.btn-outline-danger:focus,
+.btn-outline-danger:visited {
+  background-color: #3cb371 !important;
+  color: black !important;
+}
+
+.btn-outline-danger:hover span,
+.btn-outline-danger:active span,
+.btn-outline-danger:focus span,
+.btn-outline-danger:visited span {
+  color: #e0ffff !important;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: black;
+}
