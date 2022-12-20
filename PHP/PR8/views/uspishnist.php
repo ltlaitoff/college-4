@@ -42,7 +42,7 @@
 
   <hr>
   <?
-	if ($uspishnist) { ?>
+  if ($uspishnist) { ?>
   <form method="POST" action="/index.php/uspishnist/actions">
     <table>
       <tr>

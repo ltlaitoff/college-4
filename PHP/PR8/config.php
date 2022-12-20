@@ -4,5 +4,5 @@ define('DBLOGIN', 'root');
 define('DBPASSWORD', '');
 define('DBNAME', 'college');
 
-define("CONTROLLERDEFAULT", 'Students');
+define("CONTROLLERDEFAULT", 'Student');
 define("ACTIONDEFAULT", 'index');

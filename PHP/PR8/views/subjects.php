@@ -24,7 +24,7 @@
 
   <hr>
   <?
-	if ($subjects) { ?>
+  if ($subjects) { ?>
   <form method="POST" action="/index.php/subjects/actions">
     <table>
       <tr>

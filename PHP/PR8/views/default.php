@@ -32,7 +32,7 @@
 
   <hr>
   <?
-	if ($students) { ?>
+  if ($students) { ?>
   <form method="POST" action="/index.php/students/actions">
     <table>
       <tr>
@@ -55,7 +55,7 @@
             <? } ?>
           </select>
           <? //echo $s['group']; 
-							?>
+              ?>
         </td>
         <td>
           <button type="submit" name="update" value="<? echo $s['id']; ?>">Update</button>

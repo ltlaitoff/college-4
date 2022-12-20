@@ -1,7 +1,6 @@
 <?
-	include 'config.php';
-	include 'core/model.php';
-	include 'core/route.php';
-	$r = new Route();
-	$r->start();	
-?>
+include 'config.php';
+include 'core/model.php';
+include 'core/rout.php';
+$r = new Route();
+$r->start();

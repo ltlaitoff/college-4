@@ -27,4 +27,3 @@
 			return $this->db_select_array($q);
 		}
 	}
-?>
