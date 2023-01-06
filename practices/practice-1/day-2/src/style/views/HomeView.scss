@@ -1,0 +1,61 @@
+.menu {
+	display: flex;
+	column-gap: 15px;
+	margin-bottom: 15px;
+}
+
+.label {
+	font-size: 18px;
+}
+
+.radio {
+}
+
+.checkbox {
+}
+
+.quotes {
+	display: flex;
+	flex-direction: column;
+	row-gap: 10px;
+}
+
+.quotesTitle {
+	font-size: 24px;
+	font-weight: bold;
+}
+
+.quotesSorted {
+	margin-top: 20px;
+
+	.quotesTitle {
+		color: #eab308;
+
+		font-size: 24px;
+	}
+
+	.quoteAuthor {
+		color: #eab308;
+	}
+}
+
+.quote {
+	display: flex;
+	flex-direction: column;
+}
+
+.quoteTitle {
+	transition: 0.2s color;
+
+	color: #27272a;
+	font-size: 18px;
+}
+
+.quoteTitleRed {
+	color: #ef4444;
+}
+
+.quoteAuthor {
+	color: #a855f7;
+	font-size: 16px;
+}
