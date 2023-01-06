@@ -1,0 +1,11 @@
+.block {
+	margin: 0 auto;
+	width: 300px;
+	height: 300px;
+	background-image: url('../../assets/mouse/second/closed-folder.svg');
+	background-size: cover;
+}
+
+.opened {
+	background-image: url('../../assets/mouse/second/opened-folder.svg');
+}

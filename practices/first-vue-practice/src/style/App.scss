@@ -1,0 +1,54 @@
+:root {
+	--color-green: #22c55e;
+}
+
+.main {
+	width: 100%;
+}
+
+.title {
+	font-size: 2em;
+}
+
+.task-block {
+	&--title {
+		&-score {
+			color: var(--color-green);
+			font-size: 24px !important;
+		}
+	}
+}
+
+.task-block--link {
+	padding: 5px 10px;
+	color: #f87171;
+
+	&:hover {
+		border-radius: 5px;
+		background-color: #e5e7eb;
+	}
+
+	&-completed {
+		color: var(--color-green);
+	}
+}
+
+.card-info {
+	margin-top: 20px;
+	margin-bottom: 50px;
+
+	&--task-number {
+		font-size: 16px !important;
+		color: #737373;
+	}
+
+	&--title {
+		font-size: 1.5em;
+		color: #404040;
+	}
+
+	&--score {
+		font-size: 16px !important;
+		color: var(--color-green);
+	}
+}

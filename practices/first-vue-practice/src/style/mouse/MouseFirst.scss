@@ -1,0 +1,20 @@
+.block {
+	width: 500px;
+	height: 500px;
+	margin: 0 auto;
+	box-shadow: 0px 0px 100px 50px rgba(0, 0, 0, 0.1);
+}
+
+.leave {
+	color: #f87171 !important;
+}
+
+.coords {
+	display: flex;
+	column-gap: 10px;
+}
+
+.coord {
+	font-size: 1.25em;
+	color: #71717a;
+}

@@ -1,0 +1,28 @@
+.current {
+	font-size: 18px;
+	margin-bottom: 10px;
+	color: #52525b;
+}
+
+.wrapper {
+	display: flex;
+	column-gap: 20px;
+}
+
+.item {
+	padding: 6px 12px;
+	color: #52525b;
+	font-size: 16px;
+	border: none;
+	border-radius: 10px;
+	background-color: #ffffff;
+
+	cursor: pointer;
+	&:hover {
+		background-color: #bae6fd;
+	}
+}
+
+.active {
+	background-color: #f4f4f5;
+}
