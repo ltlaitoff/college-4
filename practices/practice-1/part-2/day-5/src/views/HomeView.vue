@@ -16,7 +16,7 @@ const addStudentsState = reactive({
 	age: 0,
 	group: '1',
 	dateOfBirthday: '01/01/2022',
-	practiceWork: false
+	isDonePr: false
 })
 
 function addStudent() {
@@ -26,7 +26,7 @@ function addStudent() {
 	addStudentsState.age = 0
 	addStudentsState.group = '1'
 	addStudentsState.dateOfBirthday = '01/01/2022'
-	addStudentsState.practiceWork = false
+	addStudentsState.isDonePr = false
 }
 </script>
 
@@ -41,7 +41,7 @@ function addStudent() {
 			<th class="tableHeadItem">Name</th>
 			<th class="tableHeadItem">Group</th>
 			<th class="tableHeadItem">Birthday</th>
-			<th class="tableHeadItem">PracticeWork</th>
+			<th class="tableHeadItem">Practive is done</th>
 		</tr>
 		<tr
 			class="tableContent"
@@ -67,7 +67,7 @@ function addStudent() {
 			<td class="tableContentItem">
 				<input
 					type="checkbox"
-					v-model="item.practiceWork"
+					v-model="item.isDonePr"
 				/>
 			</td>
 
@@ -107,9 +107,9 @@ function addStudent() {
 		</label>
 
 		<label class="addStudentLabel">
-			PracticeWork
+			Practive is done
 			<input
-				v-model="addStudentsState.practiceWork"
+				v-model="addStudentsState.isDonePr"
 				type="checkbox"
 			/>
 		</label>
