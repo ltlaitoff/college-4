@@ -20,5 +20,3 @@ const value = computed({
 		v-model="value"
 	/>
 </template>
-
-<style lang="scss" scoped></style>

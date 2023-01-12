@@ -4,8 +4,7 @@ import router from './router'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
 
-import './style/main.scss'
-import './style/index.css'
+import './style/main.css'
 
 const app = createApp(App)
 

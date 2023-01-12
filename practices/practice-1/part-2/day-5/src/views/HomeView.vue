@@ -43,5 +43,3 @@ const deleteStudent = id => {
 	/>
 	<AddStudentForm @addStudent="addStudent" />
 </template>
-
-<style lang="scss" src="../style/views/HomeView.scss"></style>

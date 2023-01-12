@@ -64,5 +64,3 @@ function addStudent() {
 		<button class="addStudentButton">Add student</button>
 	</form>
 </template>
-
-<style lang="scss"></style>

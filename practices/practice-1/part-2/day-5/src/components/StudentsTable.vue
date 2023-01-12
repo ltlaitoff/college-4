@@ -50,5 +50,3 @@ const deleteItem = id => {
 		</tr>
 	</table>
 </template>
-
-<style lang="scss" scoped></style>
