@@ -34,7 +34,7 @@ function addStudent() {
 		class="addStudent"
 		@submit.prevent="addStudent"
 	>
-		<label class="addStudentLabel">
+		<label class="addStudentLabel text-red-600">
 			Name
 			<input
 				type="text"
