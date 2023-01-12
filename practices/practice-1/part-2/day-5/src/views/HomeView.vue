@@ -1,10 +1,16 @@
 <script setup>
-import STUDENTS from '@/config/students.js'
+import { getStudents } from '../api/api'
 
-import { reactive, ref } from 'vue'
+import { reactive, ref, onMounted } from 'vue'
 
-const students = reactive(STUDENTS)
+const students = reactive([])
 const filter = ref('')
+
+onMounted(() => {
+	getStudents().then(value => {
+		students.push(...value.data)
+	})
+})
 
 const deleteItem = id => {
 	const index = students.findIndex(item => item._id === id)
