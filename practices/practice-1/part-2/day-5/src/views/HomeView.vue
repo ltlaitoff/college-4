@@ -7,7 +7,7 @@ const students = reactive(STUDENTS)
 const filter = ref('')
 
 const deleteItem = id => {
-	const index = students.findIndex(item => item.id === id)
+	const index = students.findIndex(item => item._id === id)
 	students.splice(index, 1)
 }
 
@@ -46,7 +46,7 @@ function addStudent() {
 		<tr
 			class="tableContent"
 			v-for="item in students"
-			:key="item.id"
+			:key="item._id"
 		>
 			<td
 				:class="[
@@ -71,7 +71,7 @@ function addStudent() {
 				/>
 			</td>
 
-			<button @click="deleteItem(item.id)">Delete</button>
+			<button @click="deleteItem(item._id)">Delete</button>
 		</tr>
 	</table>
 
