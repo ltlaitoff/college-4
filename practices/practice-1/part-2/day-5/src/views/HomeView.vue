@@ -1,6 +1,4 @@
 <script setup>
-import FirstExample from '../components/FirstExample.vue'
-import SecondExample from '../components/SecondExample.vue'
 import STUDENTS from '../config/students'
 
 import { reactive, ref } from 'vue'
@@ -37,9 +35,6 @@ function addStudent() {
 </script>
 
 <template>
-	<FirstExample />
-	<SecondExample />
-
 	<input
 		type="text"
 		v-model="filter"
