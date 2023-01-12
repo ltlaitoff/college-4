@@ -33,7 +33,6 @@ const deleteStudent = id => {
 </script>
 
 <template>
-	{{ students }}
 	<SearchStudents v-model="search" />
 
 	<StudentsTable

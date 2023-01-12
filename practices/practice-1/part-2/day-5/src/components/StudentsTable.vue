@@ -23,7 +23,7 @@ const inSearch = text => {
 			<tr>
 				<th :class="$style.headItem">Name</th>
 				<th :class="$style.headItem">Group</th>
-				<th :class="$style.headItem">Practive is done</th>
+				<th :class="$style.headItem">Practice is done</th>
 			</tr>
 		</thead>
 		<tbody :class="$style.body">
@@ -63,7 +63,7 @@ const inSearch = text => {
 
 <style module>
 .table {
-	@apply mt-5 border-collapse shadow-sm;
+	@apply mt-5 border-collapse;
 }
 
 .head {
