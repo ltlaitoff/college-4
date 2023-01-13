@@ -39,23 +39,6 @@ module.exports = {
 					}
 				]
 			}
-
-			// {
-			// 	test: /\.css$/i,
-			// 	include: path.resolve(__dirname, 'src'),
-			// 	use: [
-			// 		'style-loader',
-			// 		'vue-style-loader',
-			// 		{
-			// 			loader: 'css-loader',
-			// 			options: {
-			// 				// enable CSS Modules
-			// 				modules: true
-			// 			}
-			// 		},
-			// 		'postcss-loader'
-			// 	]
-			// }
 		]
 	},
 	devServer: {
