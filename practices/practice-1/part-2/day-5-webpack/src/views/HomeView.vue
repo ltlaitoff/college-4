@@ -1,9 +1,16 @@
 <script setup>
-import { reactive, ref, onMounted } from 'vue'
-import { getStudents } from '../api'
+import { reactive, ref, onMounted, nextTick } from 'vue'
+import { getStudents, addStudent, deleteStudent, updateStudent } from '../api'
 import AddStudentForm from '../components/AddStudentForm.vue'
 import StudentsTable from '../components/StudentsTable.vue'
 import SearchStudents from '../components/SearchStudents.vue'
+
+import {
+	getRequestPrint,
+	postRequestPrint,
+	putRequestPrint,
+	deleteRequestPrint
+} from '../utils/coloredConsoleMessages'
 
 /*
 	_id: string
@@ -13,32 +20,45 @@ import SearchStudents from '../components/SearchStudents.vue'
 	mark: number
 	isDonePr: boolean
 */
-const students = reactive([])
+const state = reactive({ students: [] })
 const search = ref('')
 
-onMounted(() => {
-	getStudents().then(value => {
-		students.push(...value.data)
-	})
-})
+const getDataFromAPI = () => {
+	getRequestPrint('/students')
 
-const addStudent = info => {
-	students.push(info)
+	getStudents().then(value => {
+		state.students = value.data
+	})
 }
 
-const deleteStudent = id => {
-	const index = students.findIndex(item => item._id === id)
-	students.splice(index, 1)
+onMounted(() => getDataFromAPI())
+
+const addStudentWrapper = student => {
+	postRequestPrint(`/students with data = ${JSON.stringify(student)}`)
+
+	addStudent(student).then(() => getDataFromAPI())
+}
+
+const deleteStudentWrapper = id => {
+	deleteRequestPrint(`/students/${id}`)
+
+	deleteStudent(id).then(() => getDataFromAPI())
+}
+
+const updateStudentWrapper = (id, student) => {
+	putRequestPrint(`/students/${id} with data = ${JSON.stringify(student)}`)
+	updateStudent(id, student)
 }
 </script>
 
 <template>
+	{{ state.students }}
 	<SearchStudents v-model="search" />
 
 	<StudentsTable
-		@deleteStudent="deleteStudent"
+		@deleteStudent="deleteStudentWrapper"
 		:search="search"
-		:students="students"
+		:students="state.students"
 	/>
-	<AddStudentForm @addStudent="addStudent" />
+	<AddStudentForm @addStudent="addStudentWrapper" />
 </template>
