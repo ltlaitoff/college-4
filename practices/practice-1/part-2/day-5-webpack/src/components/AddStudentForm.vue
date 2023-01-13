@@ -15,7 +15,6 @@ const state = reactive({
 
 const stateToObject = state => {
 	return {
-		_id: String(Date.now()),
 		name: state.name,
 		group: state.group,
 		photo: state.photo,
@@ -70,7 +69,7 @@ function addStudent() {
 
 				<option
 					:class="$style.selectOption"
-					value="RPZ 19 1/9	"
+					value="RPZ 19 1/9"
 				>
 					RPZ 19 1/9
 				</option>
