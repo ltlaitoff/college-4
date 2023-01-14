@@ -66,7 +66,6 @@ const editCancelClick = () => {
 </script>
 
 <template>
-	{{ editState }}
 	<table :class="$style.table">
 		<thead :class="$style.head">
 			<tr>
