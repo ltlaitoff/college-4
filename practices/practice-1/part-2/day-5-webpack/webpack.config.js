@@ -38,6 +38,10 @@ module.exports = {
 						use: ['vue-style-loader', 'css-loader', 'postcss-loader']
 					}
 				]
+			},
+			{
+				test: /\.svg$/,
+				use: ['vue-loader', 'vue-svg-loader']
 			}
 		]
 	},
