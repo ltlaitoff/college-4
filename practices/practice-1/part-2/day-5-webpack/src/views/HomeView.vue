@@ -4,6 +4,7 @@ import { getStudents, addStudent, deleteStudent, updateStudent } from '../api'
 import AddStudentForm from '../components/AddStudentForm.vue'
 import StudentsTable from '../components/StudentsTable.vue'
 import SearchStudents from '../components/SearchStudents.vue'
+import UpdateButton from '../components/UpdateButton.vue'
 
 import {
 	getRequestPrint,
@@ -22,13 +23,20 @@ import {
 */
 const state = reactive({ students: [] })
 const search = ref('')
+const loadStatus = ref('error')
 
 const getDataFromAPI = () => {
 	getRequestPrint('/students')
 
-	getStudents().then(value => {
-		state.students = value.data
-	})
+	loadStatus.value = 'updating'
+	getStudents()
+		.then(value => {
+			state.students = value.data
+			loadStatus.value = 'updated'
+		})
+		.catch(() => {
+			loadStatus.value = 'error'
+		})
 }
 
 onMounted(() => getDataFromAPI())
@@ -40,25 +48,37 @@ const addStudentWrapper = student => {
 }
 
 const deleteStudentWrapper = id => {
-	deleteRequestPrint(`/students/${id}`)
+	deleteRequestPrint(
+		`/students/${id} whehe user = ${JSON.stringify(
+			state.students.find(item => item._id === id)
+		)}`
+	)
 
 	deleteStudent(id).then(() => getDataFromAPI())
 }
 
-const updateStudentWrapper = (id, student) => {
-	putRequestPrint(`/students/${id} with data = ${JSON.stringify(student)}`)
-	updateStudent(id, student)
+const updateStudentWrapper = student => {
+	putRequestPrint(
+		`/students/${student.id} with data = ${JSON.stringify(student)}`
+	)
+	updateStudent(student.id, student)
 }
 </script>
 
 <template>
-	{{ state.students }}
 	<SearchStudents v-model="search" />
+	<div class="flex gap-3">
+		<UpdateButton
+			:status="loadStatus"
+			@click="getDataFromAPI"
+		/>
+		<AddStudentForm @addStudent="addStudentWrapper" />
+	</div>
 
 	<StudentsTable
 		@deleteStudent="deleteStudentWrapper"
+		@updateStudent="updateStudentWrapper"
 		:search="search"
 		:students="state.students"
 	/>
-	<AddStudentForm @addStudent="addStudentWrapper" />
 </template>
