@@ -86,7 +86,12 @@ const editCancelClick = () => {
 						inSearch(item.name) && $style.bodyItemSearch
 					]"
 				>
-					<span v-if="editState.id !== item._id">{{ `${item.name}` }}</span>
+					<router-link
+						:to="`/student-info/${item._id}`"
+						v-if="editState.id !== item._id"
+					>
+						{{ `${item.name}` }}
+					</router-link>
 					<input
 						v-else
 						type="text"

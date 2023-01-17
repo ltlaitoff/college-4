@@ -6,6 +6,10 @@ export const getStudents = () => {
 	return axios.get('/students')
 }
 
+export const getStudentInfo = id => {
+	return axios.get(`/students/${id}`)
+}
+
 export const addStudent = student => {
 	return axios.post('/students', student)
 }
