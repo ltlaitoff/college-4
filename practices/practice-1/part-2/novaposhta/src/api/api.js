@@ -12,7 +12,7 @@ export const findCity = cityName => {
 			FindByString: cityName,
 			Page: '1',
 			Warehouse: '1',
-			Limit: 10
+			Limit: 5
 		}
 	}
 
