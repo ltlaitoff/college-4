@@ -1,18 +1,15 @@
 <script setup lang="ts">
-import { RouterLink, RouterView } from 'vue-router'
+import { RouterView } from 'vue-router'
+
+import HeaderMain from './components/HeaderMain.vue'
 </script>
 
 <template>
-  <header>
-    <div class="wrapper">
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-      </nav>
-    </div>
-  </header>
+  <main class="max-w-[1440px] m-auto px-10">
+    <HeaderMain />
 
-  <RouterView />
+    <RouterView />
+  </main>
 </template>
 
 <style scoped>
