@@ -1,21 +1,42 @@
-# independent-work-weather
+# Independent Work Weather
 
-This template should help get you started developing with Vue 3 in Vite.
+## Технічне завдання
+
+### Технології
+ - Vite
+ - Vue 3, Vue-router
+ - Pinia
+ - Vitest, vue-test-utils
+ - JavaScript, TypeScript
+ - Axios
+
+### Header
+
+Зробити "Логотип" в вигляді надпису "Weather". При кліці на логотип виконується перехід на головну сторінку.
+
+Зробити меню, яке буде відцентроване та має пункти "Home" та "Add City"
+
+### Home page
+
+#### Форма виробу міста
+
+Вибір міста зі збереженого сховища. Якщо збережених міст немає - за замовчуванням стоїть пункт "Геолокація за координатами"
+
+Також в формі повина бути кнопка для переходу до іншої сторінки, на якій буде додавання міст до сховища
+
+Показувати результат нище форми
+В результаті вивести максимальну кількість необходної інформації
+
+### AddCity page 
+
+На сторінці повина бути форма в яку користувач буде вводити назву міста, а через деякий час (~500ms) йому будуть показуватись результати, які знайшлись нище форми.
+
+В формі повина бути кнопка обнулення та кнопка, яка додає місто в сховище по першому першому показаному результату, а користувачу показувати, що було успішно додано.
+
+При нажаті на результат дані його повині записуватись в сховище, а користувачу показувати, що було успішно додано.
+
 
 ## Recommended IDE Setup
-
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
-
-## Type Support for `.vue` Imports in TS
-
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin) to make the TypeScript language service aware of `.vue` types.
-
-If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has also implemented a [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471#discussioncomment-1361669) that is more performant. You can enable it by the following steps:
-
-1. Disable the built-in TypeScript Extension
-   1. Run `Extensions: Show Built-in Extensions` from VSCode's command palette
-   2. Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
-2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
 
 ## Customize configuration
 
