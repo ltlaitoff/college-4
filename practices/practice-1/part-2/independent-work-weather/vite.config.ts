@@ -3,6 +3,7 @@ import { fileURLToPath, URL } from 'node:url'
 import { defineConfig, loadEnv } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import { createHtmlPlugin } from 'vite-plugin-html'
+import svgLoader from 'vite-svg-loader'
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => {
@@ -18,7 +19,8 @@ export default defineConfig(({ mode }) => {
             title: env.VITE_APP_TITLE
           }
         }
-      })
+      }),
+      svgLoader()
     ],
     resolve: {
       alias: {
