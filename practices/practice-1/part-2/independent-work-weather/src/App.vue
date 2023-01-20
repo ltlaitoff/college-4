@@ -6,17 +6,27 @@ import type { CityStorageItem } from './types/storage'
 import HeaderMain from './components/HeaderMain.vue'
 import { useCitiesStore } from './stores/cities'
 import { set as setStorage, get as getStorage } from './utils/storage'
+import {
+  setLocalStoragePrint,
+  getLocalStoragePrint
+} from './utils/coloredConsoleMessages'
 
 const citiesStore = useCitiesStore()
 
 watch(
   () => citiesStore.cities,
-  state => setStorage(state),
+  state => {
+    setLocalStoragePrint('Set local storage set')
+
+    setStorage(state)
+  },
   { deep: true }
 )
 
 onMounted(() => {
   const storageData = getStorage()
+  getLocalStoragePrint('Update state')
+
   if (storageData === null) return
 
   storageData.map((item: CityStorageItem) => {

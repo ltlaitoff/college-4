@@ -74,7 +74,7 @@ useClickOutside(mainElementRef, () => {
         <button
           class="p-2 flex gap-x-5 justify-between hover:bg-pink-200 rounded items-center"
           v-for="searchItem in searchItems"
-          :key="searchItem.name"
+          :key="searchItem.name + searchItem.lat + searchItem.lon"
           @click="onItemClick(searchItem)"
         >
           <div class="font-medium">

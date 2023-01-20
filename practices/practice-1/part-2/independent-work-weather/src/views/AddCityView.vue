@@ -2,9 +2,9 @@
 import { getCitiesListByName } from '@/api'
 import type { CityStorageItem } from '@/types/storage'
 import { ref, watch } from 'vue'
-import getUnicodeFlagIcon from 'country-flag-icons/unicode'
 import { useTimer } from '../composables/useTimer'
 import { useCitiesStore } from '../stores/cities'
+import { getRequestPrint } from '@/utils/coloredConsoleMessages'
 
 const inputValue = ref('')
 const searchItems = ref<Array<CityStorageItem> | null>(null)
@@ -12,16 +12,16 @@ const showSelectList = ref<boolean>(false)
 const cityAdded = ref<boolean>(false)
 
 const timer = useTimer(500, () => {
+  if (inputValue.value === '') return
+
   getCitiesListByName(inputValue.value).then(value => {
-    console.log(value)
+    getRequestPrint(`getCitiesListByName`)
     searchItems.value = value
   })
 
   if (cityAdded.value) {
     cityAdded.value = false
   }
-
-  console.log(inputValue.value)
 })
 
 watch(
@@ -75,7 +75,7 @@ const mainElementRef = ref<HTMLLabelElement | null>(null)
         <button
           class="p-2 flex gap-x-5 justify-between hover:bg-pink-200 rounded items-center"
           v-for="searchItem in searchItems"
-          :key="searchItem.name"
+          :key="searchItem.name + searchItem.lat + searchItem.lon"
           @click="onItemClick(searchItem)"
         >
           <div class="font-medium">

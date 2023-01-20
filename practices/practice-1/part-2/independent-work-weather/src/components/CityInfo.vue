@@ -6,6 +6,7 @@ import type { CityStorageItem } from '@/types/storage'
 import { ref, onMounted, computed, watch } from 'vue'
 import getUnicodeFlagIcon from 'country-flag-icons/unicode'
 import NavigatorArrow from '../assets/navigator-arrow.svg?component'
+import { getRequestPrint } from '@/utils/coloredConsoleMessages'
 
 const props = defineProps<{
   item: CityStorageItem
@@ -45,7 +46,7 @@ const cityInfo = ref<CityInfo | null>(null)
 
 onMounted(() => {
   getCityWeather(props.item).then(value => {
-    console.log(JSON.stringify(value))
+    getRequestPrint(`getCityWeather`)
     cityInfo.value = value
   })
 })
@@ -54,7 +55,7 @@ watch(
   () => props.item,
   newItem => {
     getCityWeather(newItem).then(value => {
-      console.log(JSON.stringify(value))
+      getRequestPrint(`getCityWeather`)
       cityInfo.value = value
     })
   }
