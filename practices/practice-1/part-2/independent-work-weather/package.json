@@ -13,6 +13,7 @@
     "format": "prettier .  --write"
   },
   "dependencies": {
+    "country-flag-icons": "^1.5.5",
     "pinia": "^2.0.28",
     "vue": "^3.2.45",
     "vue-router": "^4.1.6"
