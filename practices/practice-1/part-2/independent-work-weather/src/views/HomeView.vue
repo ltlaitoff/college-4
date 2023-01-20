@@ -1,6 +1,8 @@
 <script setup lang="ts">
-import ChoiceCity from '@/components/ChoiceCity.vue'
 import type { CityStorageItem } from '@/types/storage'
+import ChoiceCity from '@/components/ChoiceCity.vue'
+import CityInfo from '@/components/CityInfo.vue'
+
 import { ref } from 'vue'
 
 const basicStorage = ref<Array<CityStorageItem>>([
@@ -55,7 +57,6 @@ const choicedCity = ref<CityStorageItem | null>(null)
 
 const changeChoicedCity = (newChoicedCity: CityStorageItem | null) => {
   choicedCity.value = newChoicedCity
-  console.log(choicedCity.value)
 }
 </script>
 
@@ -64,5 +65,8 @@ const changeChoicedCity = (newChoicedCity: CityStorageItem | null) => {
     :cities="basicStorage"
     @change="changeChoicedCity"
   />
-  {{ choicedCity }}
+  <CityInfo
+    v-if="choicedCity !== null"
+    :item="choicedCity"
+  />
 </template>
