@@ -1,7 +1,28 @@
 <script setup lang="ts">
+import { watch, onMounted } from 'vue'
 import { RouterView } from 'vue-router'
 
+import type { CityStorageItem } from './types/storage'
 import HeaderMain from './components/HeaderMain.vue'
+import { useCitiesStore } from './stores/cities'
+import { set as setStorage, get as getStorage } from './utils/storage'
+
+const citiesStore = useCitiesStore()
+
+watch(
+  () => citiesStore.cities,
+  state => setStorage(state),
+  { deep: true }
+)
+
+onMounted(() => {
+  const storageData = getStorage()
+  if (storageData === null) return
+
+  storageData.map((item: CityStorageItem) => {
+    citiesStore.addCity(item)
+  })
+})
 </script>
 
 <template>
