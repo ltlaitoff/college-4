@@ -9,7 +9,7 @@ import NavigatorArrow from '../assets/navigator-arrow.svg?component'
 import { getRequestPrint } from '@/utils/coloredConsoleMessages'
 
 const props = defineProps<{
-  item: CityStorageItem
+  item: CityStorageItem | null
 }>()
 
 interface CityInfo {
@@ -45,15 +45,37 @@ interface CityInfo {
 const cityInfo = ref<CityInfo | null>(null)
 
 onMounted(() => {
-  getCityWeather(props.item).then(value => {
-    getRequestPrint(`getCityWeather`)
-    cityInfo.value = value
-  })
+  if (props.item) {
+    getCityWeather(props.item).then(value => {
+      getRequestPrint(`getCityWeather`)
+      cityInfo.value = value
+    })
+  }
+
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(position => {
+      const data = {
+        name: 'User coords',
+        country: '-',
+        lat: position.coords.latitude,
+        lon: position.coords.longitude
+      }
+
+      getCityWeather(data).then(value => {
+        getRequestPrint(`getCityWeather`)
+        cityInfo.value = value
+      })
+    })
+  } else {
+    alert('Geolocation is not supported by this browser.')
+  }
 })
 
 watch(
   () => props.item,
   newItem => {
+    if (newItem === null) return
+
     getCityWeather(newItem).then(value => {
       getRequestPrint(`getCityWeather`)
       cityInfo.value = value
@@ -130,18 +152,18 @@ const sunsetDate = computed(() => {
 <template>
   <div
     v-if="cityInfo"
-    class="flex flex-col gap-y-2 mt-10"
+    class="inline-flex flex-col gap-y-2 mt-10 dark:bg-gray-600 p-5 rounded-xl"
   >
     <div class="text-pink-500">{{ currentDate }}</div>
 
-    <div class="text-2xl">
+    <div class="text-2xl dark:text-gray-100">
       {{ cityInfo.name }},
       <span class="text-violet-600">
         {{ cityInfo.sys.country }}
         {{ getUnicodeFlagIcon(cityInfo.sys.country) }}
       </span>
     </div>
-    <div class="flex text-2xl items-center">
+    <div class="flex text-2xl items-center dark:text-gray-100">
       <img
         class="w-14"
         :src="`http://openweathermap.org/img/wn/${cityInfo.weather[0].icon}@2x.png`"
@@ -150,14 +172,16 @@ const sunsetDate = computed(() => {
       {{ cityInfo.main.temp }}°C
     </div>
 
-    <div class="text-gray-700">
+    <div class="text-gray-700 dark:text-gray-100">
       Feels like:
       <span class="">{{ cityInfo.main.feels_like }}°C</span>
 
       {{ capitalizeFirstLetter(cityInfo.weather[0].description) }}
     </div>
 
-    <div class="flex gap-x-2 h-6 items-center text-gray-700 fill-sky-400">
+    <div
+      class="flex gap-x-2 h-6 items-center text-gray-700 dark:text-gray-100 fill-sky-400"
+    >
       <NavigatorArrow
         class="w-4"
         :style="`transform: rotate(${cityInfo.wind.deg + 180}deg)`"
@@ -165,12 +189,12 @@ const sunsetDate = computed(() => {
       {{ cityInfo.wind.speed }}m/s
     </div>
 
-    <div class="text-gray-700">
+    <div class="text-gray-700 dark:text-gray-100">
       Clouds:
       {{ cityInfo.clouds.all }}%
     </div>
 
-    <div class="text-gray-700">
+    <div class="text-gray-700 dark:text-gray-100">
       <div class="">Sunrise: {{ sunriseDate }}</div>
       <div class="">Sunset: {{ sunsetDate }}</div>
     </div>

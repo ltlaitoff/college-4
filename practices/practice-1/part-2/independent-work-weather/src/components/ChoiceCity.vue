@@ -55,24 +55,24 @@ useClickOutside(mainElementRef, () => {
 <template>
   <div
     ref="mainElementRef"
-    class="inline-flex gap-x-3"
+    class="flex gap-x-3"
   >
-    <span class="py-2">Choice city:</span>
+    <span class="py-2 dark:text-gray-100">Choice city:</span>
     <div class="w-72 relative">
       <input
-        class="border rounded border-gray-400 py-2 px-4 w-full"
+        class="border rounded border-gray-400 py-2 px-4 w-full bg-white dark:border-gray-500 dark:bg-gray-600 dark:text-white"
         type="text"
         v-model="currentSearchValue"
         @focus="onInputFocus"
       />
       <div
-        class="absolute flex flex-col mt-2 w-72 border rounded p-1 gap-y-1 bg-white"
+        class="absolute flex flex-col mt-2 w-72 border rounded p-1 gap-y-1 bg-white dark:bg-gray-600 dark:border-gray-500"
         v-if="
           showSelectList && searchItems !== null && searchItems.length !== 0
         "
       >
         <button
-          class="p-2 flex gap-x-5 justify-between hover:bg-pink-200 rounded items-center"
+          class="p-2 flex gap-x-5 justify-between hover:bg-pink-200 dark:hover:bg-pink-400 rounded items-center dark:bg-gray-600 dark:text-white"
           v-for="searchItem in searchItems"
           :key="searchItem.name + searchItem.lat + searchItem.lon"
           @click="onItemClick(searchItem)"

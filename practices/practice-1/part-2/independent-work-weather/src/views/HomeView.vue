@@ -19,8 +19,5 @@ const changeChoicedCity = (newChoicedCity: CityStorageItem | null) => {
     :cities="citiesStore.cities"
     @change="changeChoicedCity"
   />
-  <CityInfo
-    v-if="choicedCity !== null"
-    :item="choicedCity"
-  />
+  <CityInfo :item="choicedCity" />
 </template>

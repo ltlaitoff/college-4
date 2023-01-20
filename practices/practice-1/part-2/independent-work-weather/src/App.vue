@@ -6,19 +6,45 @@ import type { CityStorageItem } from './types/storage'
 import HeaderMain from './components/HeaderMain.vue'
 import { useCitiesStore } from './stores/cities'
 import { set as setStorage, get as getStorage } from './utils/storage'
+import { useTheme } from './stores/theme'
 import {
   setLocalStoragePrint,
   getLocalStoragePrint
 } from './utils/coloredConsoleMessages'
 
 const citiesStore = useCitiesStore()
+const themeStore = useTheme()
 
 watch(
   () => citiesStore.cities,
   state => {
-    setLocalStoragePrint('Set local storage set')
+    setLocalStoragePrint('Set local storage')
 
-    setStorage(state)
+    const storageData = getStorage()
+
+    if (storageData === null) return
+
+    //@ts-ignore
+    storageData.cities = state
+
+    setStorage(storageData)
+  },
+  { deep: true }
+)
+
+watch(
+  () => themeStore.theme,
+  state => {
+    setLocalStoragePrint('Set local storage')
+
+    const storageData = getStorage()
+
+    if (storageData === null) return
+
+    //@ts-ignore
+    storageData.theme = state
+
+    setStorage(storageData)
   },
   { deep: true }
 )
@@ -29,9 +55,19 @@ onMounted(() => {
 
   if (storageData === null) return
 
-  storageData.map((item: CityStorageItem) => {
-    citiesStore.addCity(item)
-  })
+  // @ts-expect-error
+  if (storageData.cities) {
+    // @ts-expect-error
+    storageData.cities.map((item: CityStorageItem) => {
+      citiesStore.addCity(item)
+    })
+  }
+
+  // @ts-expect-error
+  if (storageData.theme) {
+    // @ts-expect-error
+    themeStore.setTheme(storageData.theme)
+  }
 })
 </script>
 
