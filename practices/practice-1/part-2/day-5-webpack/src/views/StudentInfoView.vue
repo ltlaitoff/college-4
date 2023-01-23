@@ -43,7 +43,7 @@ const onCloseModalClick = () => {
 			<ul>
 				<li>
 					<router-link
-						class="text-lg bg-clip-text font-medium text-transparent bg-gradient-to-r from-indigo-600 to-sky-800 hover:from-indigo-300 hover:to-sky-300"
+						class="text-lg bg-clip-text font-medium text-transparent bg-gradient-to-r from-indigo-600 to-sky-800 hover:from-indigo-300 hover:to-sky-300 dark:from-indigo-300 dark:to-sky-400 dark:hover:from-indigo-500 dark:hover:to-sky-600"
 						to="/"
 					>
 						Home
@@ -59,22 +59,26 @@ const onCloseModalClick = () => {
 				alt="studentData.name"
 				@click="onImageClick"
 			/>
-			<div class="mt-2 flex flex-col gap-2 text-gray-600">
+			<div class="mt-2 flex flex-col gap-2 text-gray-600 dark:text-gray-200">
 				<h2 class="text-xl font-medium">
 					{{ studentData.name }}
 				</h2>
 
 				<div class="">
 					Група:
-					<span class="text-sky-600 font-medium">{{ studentData.group }}</span>
+					<span class="text-sky-600 dark:text-sky-400 font-medium">
+						{{ studentData.group }}
+					</span>
 				</div>
 
 				<div class="">
 					Статус практичної роботи:
 					<span
 						:class="[
-							'text-sky-600 font-medium',
-							studentData.isDonePr ? 'text-green-600' : 'text-red-600'
+							'text-sky-600 dark:text-sky-400 font-medium',
+							studentData.isDonePr
+								? 'text-green-600 dark:text-green-500'
+								: 'text-red-600 dark:text-red-400'
 						]"
 					>
 						{{ practiceStatus }}
@@ -102,7 +106,7 @@ const onCloseModalClick = () => {
 					</button>
 				</div>
 				<div
-					class="absolute top-0 left-0 bg-gray-400 w-full h-full -z-10"
+					class="absolute top-0 left-0 bg-gray-700 dark:bg-gray-900 w-full h-full z-0 opacity-50"
 				></div>
 			</div>
 		</Teleport>
