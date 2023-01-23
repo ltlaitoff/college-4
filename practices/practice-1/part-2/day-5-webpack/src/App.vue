@@ -3,6 +3,8 @@ import { computed } from 'vue'
 import { RouterView } from 'vue-router'
 import { useStore } from 'vuex'
 
+import ThemeButton from './components/ThemeButton.vue'
+
 const store = useStore()
 
 const themeIsDark = computed(() => {
@@ -14,6 +16,7 @@ const themeIsDark = computed(() => {
 <template>
 	<main :class="['h-full', themeIsDark && 'dark']">
 		<div class="box-border p-10 bg-white dark:bg-gray-700 h-full">
+			<ThemeButton />
 			<RouterView />
 		</div>
 	</main>
