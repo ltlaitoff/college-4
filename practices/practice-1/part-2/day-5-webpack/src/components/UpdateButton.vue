@@ -18,38 +18,20 @@ const images = {
 	<button
 		@click="emits('click')"
 		:class="[
-			$style.button,
+			'capitalize mt-3 fill-gray-400 flex text-gray-800 dark:text-gray-200 gap-2 text-base font-light  border focus-visible:shadow-[0_0_20px_0_rgba(0,0,0,0.15)] transition border-neutral-300 dark:border-gray-500 rounded focus-visible:border-sky-300 focus-visible:outline-none py-2 px-4',
 			{
-				[$style.success]: props.status === 'updated',
-				[$style.error]: props.status === 'error'
+				'text-green-900 fill-green-700 dark:!text-green-400 dark:!fill-green-500':
+					props.status === 'updated',
+				'text-red-900 fill-red-700 dark:!text-red-400 dark:!fill-red-500':
+					props.status === 'error'
 			}
 		]"
 	>
 		<component
 			:is="images[props.status]"
 			preserveAspectRatio="xMidYMid meet"
-			:class="$style.icon"
+			class="fill-inherit max-w-[24px] max-h-[24px] w-full h-full"
 		/>
 		{{ props.status }}
 	</button>
 </template>
-
-<style module>
-.button {
-	text-transform: capitalize;
-
-	@apply mt-3 fill-gray-400 flex text-gray-800 gap-2 text-base font-light  border focus-visible:shadow-[0_0_20px_0_rgba(0,0,0,0.15)] transition border-neutral-300 rounded focus-visible:border-sky-300 focus-visible:outline-none py-2 px-4;
-}
-
-.icon {
-	@apply fill-inherit max-w-[24px] max-h-[24px] w-full h-full;
-}
-
-.success {
-	@apply text-green-900 fill-green-700;
-}
-
-.error {
-	@apply text-red-900 fill-red-700;
-}
-</style>
