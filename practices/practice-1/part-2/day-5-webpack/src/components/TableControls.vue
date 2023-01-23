@@ -26,33 +26,49 @@ const editClick = () => {
 	<div :class="[$style.buttons, { [$style.alwaysShow]: props.editActive }]">
 		<button
 			v-if="props.editActive !== true"
-			:class="[$style.deleteButton, $style.button]"
+			:class="[
+				'hover:border-red-400  hover:bg-red-200  hover:fill-red-600 dark:hover:bg-red-400 dark:hover:fill-red-700',
+				$style.button,
+				'h-full w-8 fill-gray-400 hover:shadow-[0_0_20px_0_rgba(0,0,0,0.2)] rounded'
+			]"
 			@click="deleteClick"
 		>
-			<TrashIcon :class="$style.icon" />
+			<TrashIcon class="w-full fill-inherit" />
 		</button>
 
 		<button
 			v-if="props.editActive !== true"
-			:class="[$style.editButton, $style.button]"
+			:class="[
+				'hover:border-sky-400  hover:bg-sky-200  hover:fill-sky-600 dark:hover:bg-sky-400 dark:hover:fill-sky-700',
+				$style.button,
+				'h-full w-8 fill-gray-400 hover:shadow-[0_0_20px_0_rgba(0,0,0,0.2)] rounded'
+			]"
 			@click="editClick"
 		>
-			<PencilIcon :class="$style.icon" />
+			<PencilIcon class="w-full fill-inherit" />
 		</button>
 
 		<button
 			v-if="props.editActive === true"
-			:class="[$style.editAcceptButton, $style.button]"
+			:class="[
+				'border-green-400  bg-green-200  fill-green-600 dark:bg-green-300 dark:fill-green-600 hover:border-sky-400  hover:bg-sky-200  hover:fill-sky-600 dark:hover:border-sky-400  dark:hover:bg-sky-400  dark:hover:fill-sky-700',
+				$style.button,
+				'h-full w-8 fill-gray-400 hover:shadow-[0_0_20px_0_rgba(0,0,0,0.2)] rounded'
+			]"
 			@click="emits('editAcceptClick')"
 		>
-			<AcceptIcon :class="$style.icon" />
+			<AcceptIcon class="w-full fill-inherit" />
 		</button>
 		<button
 			v-if="editActive === true"
-			:class="[$style.editCancelButton, $style.button]"
+			:class="[
+				'border-red-400  bg-red-200  fill-red-600 dark:bg-red-300 dark:fill-red-600 hover:border-sky-400  hover:bg-sky-200  hover:fill-sky-600 dark:hover:border-sky-400  dark:hover:bg-sky-400  dark:hover:fill-sky-700',
+				$style.button,
+				'h-full w-8 fill-gray-400 hover:shadow-[0_0_20px_0_rgba(0,0,0,0.2)] rounded'
+			]"
 			@click="emits('editCancelClick')"
 		>
-			<CancelIcon :class="$style.icon" />
+			<CancelIcon class="w-full fill-inherit" />
 		</button>
 	</div>
 </template>
@@ -71,26 +87,6 @@ const editClick = () => {
 }
 
 .button {
-	@apply h-full w-8 fill-gray-400 hover:shadow-[0_0_20px_0_rgba(0,0,0,0.2)] rounded;
 	transition: 0.5s all;
-}
-
-.deleteButton {
-	@apply hover:border-red-400  hover:bg-red-200  hover:fill-red-600;
-}
-
-.editButton {
-	@apply hover:border-sky-400  hover:bg-sky-200  hover:fill-sky-600;
-}
-
-.editAcceptButton {
-	@apply border-green-400  bg-green-200  fill-green-600 hover:border-sky-400  hover:bg-sky-200  hover:fill-sky-600;
-}
-
-.editCancelButton {
-	@apply border-red-400  bg-red-200  fill-red-600 hover:border-sky-400  hover:bg-sky-200  hover:fill-sky-600;
-}
-.icon {
-	@apply w-full fill-inherit;
 }
 </style>
