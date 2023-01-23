@@ -160,7 +160,7 @@ const editCancelClick = () => {
 
 <style scss module>
 .table {
-	@apply mt-5 border-collapse text-left;
+	@apply mt-1 border-collapse text-left;
 }
 
 .headItem {
