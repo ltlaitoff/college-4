@@ -66,24 +66,30 @@ const editCancelClick = () => {
 </script>
 
 <template>
-	<table :class="$style.table">
+	<table class="mt-1 border-collapse text-left">
 		<thead :class="$style.head">
 			<tr>
-				<th :class="$style.headItem">Name</th>
-				<th :class="$style.headItem">Group</th>
-				<th :class="$style.headItem">Practice is done</th>
+				<th class="py-2 px-4 text-slate-900 dark:text-slate-100 font-normal">
+					Name
+				</th>
+				<th class="py-2 px-4 text-slate-900 dark:text-slate-100 font-normal">
+					Group
+				</th>
+				<th class="py-2 px-4 text-slate-900 dark:text-slate-100 font-normal">
+					Practice is done
+				</th>
 			</tr>
 		</thead>
-		<tbody :class="$style.body">
+		<tbody class="border-2 border-white dark:border-gray-700">
 			<tr
-				:class="$style.row"
+				:class="['text-slate-600 dark:text-slate-300', $style.row]"
 				v-for="item in props.students"
 				:key="item._id"
 			>
 				<td
 					:class="[
-						$style.bodyItem,
-						inSearch(item.name) && $style.bodyItemSearch
+						'border border-gray-200 py-3 px-4  transition align-middle',
+						inSearch(item.name) && 'text-pink-400 font-medium'
 					]"
 				>
 					<router-link
@@ -94,16 +100,17 @@ const editCancelClick = () => {
 					</router-link>
 					<input
 						v-else
+						class="text-base ml-2 border focus-visible:shadow-[0_0_20px_0_rgba(0,0,0,0.15)] transition border-neutral-300 rounded focus-visible:border-sky-300 focus-visible:outline-none p-1 pl-2 dark:border-gray-500 dark:bg-gray-500 dark:font-normal dark:text-gray-100"
 						type="text"
 						v-model="editState.name"
 					/>
 				</td>
-				<td :class="$style.bodyItem">
+				<td class="border border-gray-200 py-3 px-4 transition align-middle">
 					<span v-if="editState.id !== item._id">{{ `${item.group}` }}</span>
 
 					<select
 						v-else
-						:class="$style.select"
+						class="border-none py-2 px-4 bg-gray-100 dark:bg-gray-500 dark:text-gray-100 text-base ml-2 border focus-visible:shadow-[0_0_20px_0_rgba(0,0,0,0.15)] transition border-neutral-300 rounded focus-visible:outline-none"
 						v-model="editState.group"
 					>
 						<option
@@ -116,31 +123,33 @@ const editCancelClick = () => {
 						</option>
 
 						<option
-							:class="$style.selectOption"
+							class="bg-slate-200 dark:bg-slate-600 border-none p-2"
 							value="RPZ 19 1/9"
 						>
 							RPZ 19 1/9
 						</option>
 						<option
-							:class="$style.selectOption"
+							class="bg-slate-200 dark:bg-slate-600 border-none p-2"
 							value="RPZ 19 2/9"
 						>
 							RPZ 19 2/9
 						</option>
 					</select>
 				</td>
-				<td :class="[$style.bodyItem, $style.lastItem]">
+				<td
+					class="border border-gray-200 py-3 px-4 transition align-middle border-r-0"
+				>
 					<input
 						v-if="editState.id !== item._id"
 						type="checkbox"
-						:class="$style.checkbox"
+						class="w-4 h-4 checked:bg-sky-200"
 						:checked="item.isDonePr"
 						@click.prevent=""
 					/>
 					<input
 						v-else
 						type="checkbox"
-						:class="$style.checkbox"
+						class="w-4 h-4 checked:bg-sky-200"
 						v-model="editState.isDonePr"
 					/>
 				</td>
@@ -159,58 +168,11 @@ const editCancelClick = () => {
 </template>
 
 <style scss module>
-.table {
-	@apply mt-1 border-collapse text-left;
-}
-
-.headItem {
-	@apply py-2 px-4 text-slate-900 font-normal;
-}
-
-.row:hover .rowControls {
-	opacity: 1;
-}
-
-.body {
-	@apply border-2 border-white;
-}
-.bodyItem {
-	@apply border border-gray-200 py-3 px-4 text-slate-600 transition;
-	vertical-align: middle;
-}
-
-.checkbox {
-	@apply w-4 h-4;
-}
-
-.checkbox:checked {
-	@apply bg-sky-200;
-}
-
-.bodyItemSearch {
-	@apply text-pink-400 font-medium;
-}
-
-.bodyItemInvisible {
-	@apply pl-3;
-	vertical-align: middle;
-
-	opacity: 0;
-}
-
 .rowControls {
 	opacity: 0;
 }
 
-.lastItem {
-	@apply border-r-0;
-}
-
-.select {
-	@apply border-none py-2 px-4 bg-gray-100 text-base ml-2 border focus-visible:shadow-[0_0_20px_0_rgba(0,0,0,0.15)] transition border-neutral-300 rounded focus-visible:outline-none;
-}
-
-.selectOption {
-	@apply bg-slate-200 border-none p-2;
+.row:hover .rowControls {
+	opacity: 1;
 }
 </style>
