@@ -1,5 +1,8 @@
 import { createStore } from 'vuex'
+import { countStore } from './modules'
 
-const store = createStore({})
+const store = createStore({
+	modules: { count: countStore }
+})
 
-return { store }
+export { store }
