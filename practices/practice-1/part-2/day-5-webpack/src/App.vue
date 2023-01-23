@@ -13,10 +13,8 @@ const themeIsDark = computed(() => {
 
 <template>
 	<main :class="['h-full', themeIsDark && 'dark']">
-		<div class="box-border p-10 bg-white dark:bg-gray-400 h-full">
+		<div class="box-border p-10 bg-white dark:bg-gray-700 h-full">
 			<RouterView />
 		</div>
 	</main>
 </template>
-
-<style lang="scss"></style>
