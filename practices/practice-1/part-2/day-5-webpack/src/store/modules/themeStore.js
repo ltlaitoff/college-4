@@ -6,19 +6,19 @@ const themeStore = {
 		}
 	},
 	mutations: {
-		setLightTheme: state => {
+		setLightTheme(state) {
 			state.theme = 'light'
 		},
-		setDarkTheme: state => {
+		setDarkTheme(state) {
 			state.theme = 'dark'
 		},
-		toggleTheme: state => {
+		toggleTheme(state) {
 			if (state.theme === 'light') {
-				this.commit('setDarkTheme')
+				this.commit('theme/setDarkTheme')
 				return
 			}
 
-			this.commit('setLightTheme')
+			this.commit('theme/setLightTheme')
 		}
 	},
 	getters: {
