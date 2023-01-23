@@ -1,10 +1,13 @@
 <script setup>
-import { reactive, ref, onMounted, nextTick } from 'vue'
+import { reactive, ref, onMounted, nextTick, computed } from 'vue'
+import { useStore } from 'vuex'
+
 import { getStudents, addStudent, deleteStudent, updateStudent } from '../api'
 import AddStudentForm from '../components/AddStudentForm.vue'
 import StudentsTable from '../components/StudentsTable.vue'
 import SearchStudents from '../components/SearchStudents.vue'
 import UpdateButton from '../components/UpdateButton.vue'
+import StudentsCount from '../components/StudentsCount.vue'
 
 import {
 	getRequestPrint,
@@ -25,6 +28,16 @@ const state = reactive({ students: [] })
 const search = ref('')
 const loadStatus = ref('error')
 
+const store = useStore()
+
+const setCountStoreValue = studentsCount => {
+	store.commit('count/setCount', studentsCount)
+}
+
+const studentsCount = computed(() => {
+	return store.getters['count/getCount']
+})
+
 const getDataFromAPI = () => {
 	getRequestPrint('/students')
 
@@ -32,6 +45,7 @@ const getDataFromAPI = () => {
 	getStudents()
 		.then(value => {
 			state.students = value.data
+			setCountStoreValue(state.students.length)
 			loadStatus.value = 'updated'
 		})
 		.catch(() => {
@@ -74,6 +88,8 @@ const updateStudentWrapper = student => {
 		/>
 		<AddStudentForm @addStudent="addStudentWrapper" />
 	</div>
+
+	<StudentsCount :count="studentsCount" />
 
 	<StudentsTable
 		@deleteStudent="deleteStudentWrapper"
